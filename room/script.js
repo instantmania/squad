@@ -68,7 +68,8 @@ const players = {
 
         joined: "2025",
 
-        image: "assets/Fitra.jpg"
+        image: "assets/fitra.jpg"
+       
 
     },
 
