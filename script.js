@@ -53,7 +53,7 @@ revealElements.forEach((element) => {
 
 const players = {
 
-    bardan: {
+    fitra: {
 
         number: "69",
 
