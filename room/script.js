@@ -64,7 +64,7 @@ const players = {
         position: "Ujung Kiri",
 
         speciality:
-            "Ngedit / SMakan / Tidur",
+            "Ngedit / Makan / Tidur",
 
         joined: "2025",
 
@@ -81,14 +81,14 @@ const players = {
 
         role: "KANG MOSING",
 
-        position: "Photographer",
+        position: "Di Tengah",
 
         speciality:
             "Photography / Music / Ngedit",
 
         joined: "2022",
 
-        image: "assets/rizky.jpg"
+        image: "assets/Alip.jpg"
 
     },
 
