@@ -94,7 +94,7 @@ const players = {
     },
 
 
-    nana: {
+    naufal: {
 
         number: "09",
 
@@ -109,12 +109,12 @@ const players = {
 
         joined: "2024",
 
-        image: "assets/nana.jpg"
+        image: "assets/naufal.jpg"
 
     },
 
 
-    farhan: {
+    nicho: {
 
         number: "08",
 
@@ -129,12 +129,12 @@ const players = {
 
         joined: "2026",
 
-        image: "assets/farhan.jpg"
+        image: "assets/nicho.jpg"
 
     },
 
 
-    satria: {
+    aang: {
 
         number: "17",
 
@@ -149,12 +149,12 @@ const players = {
 
         joined: "2021",
 
-        image: "assets/satria.jpg"
+        image: "assets/aang.jpg"
 
     },
 
 
-    devi: {
+    bardan: {
 
         number: "10",
 
@@ -169,7 +169,7 @@ const players = {
 
         joined: "2023",
 
-        image: "assets/devi.jpg"
+        image: "assets/bardan.jpg"
 
     }
 
