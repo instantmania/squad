@@ -73,20 +73,20 @@ const players = {
     },
 
 
-    rizky: {
+    alip: {
 
         number: "07",
 
-        name: "RIZKY",
+        name: "ALIP",
 
-        role: "PHOTOGRAPHER",
+        role: "KANG MOSING",
 
         position: "Photographer",
 
         speciality:
-            "Photography / Lighting / Visual",
+            "Photography / Music / Ngedit",
 
-        joined: "2024",
+        joined: "2022",
 
         image: "assets/rizky.jpg"
 
