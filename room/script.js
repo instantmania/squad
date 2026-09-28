@@ -53,22 +53,22 @@ revealElements.forEach((element) => {
 
 const players = {
 
-    bardan: {
+    fitra: {
 
-        number: "01",
+        number: "69",
 
-        name: "BARDAN",
+        name: "FITRA",
 
-        role: "CREATIVE DIRECTOR",
+        role: "KANG NGABISIN CP",
 
-        position: "Creative Director",
+        position: "Ujung Kiri",
 
         speciality:
-            "Visual / Storytelling / Campaign",
+            "Ngedit / SMakan / Tidur",
 
-        joined: "2024",
+        joined: "2025",
 
-        image: "assets/bardan.jpg"
+        image: "assets/Fitra.jpg"
 
     },
 
