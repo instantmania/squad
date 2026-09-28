@@ -89,7 +89,7 @@ const players = {
 
         joined: "2022",
 
-        image: "assets/Alip.jpg"
+        image: "assets/alip.jpg"
 
     },
 
