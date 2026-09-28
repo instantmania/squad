@@ -95,9 +95,9 @@ const players = {
 
     nana: {
 
-        number: "10",
+        number: "09",
 
-        name: "NANA",
+        name: "NAUFAL",
 
         role: "PRODUCTION",
 
@@ -106,7 +106,7 @@ const players = {
         speciality:
             "Production / Coordination / Creative",
 
-        joined: "2025",
+        joined: "2024",
 
         image: "assets/nana.jpg"
 
@@ -115,9 +115,9 @@ const players = {
 
     farhan: {
 
-        number: "17",
+        number: "08",
 
-        name: "FARHAN",
+        name: "NICHO",
 
         role: "MARKETING",
 
@@ -126,7 +126,7 @@ const players = {
         speciality:
             "Marketing / Communication / Strategy",
 
-        joined: "2025",
+        joined: "2026",
 
         image: "assets/farhan.jpg"
 
@@ -135,9 +135,9 @@ const players = {
 
     satria: {
 
-        number: "23",
+        number: "17",
 
-        name: "SATRIA",
+        name: "AANG",
 
         role: "EDITOR",
 
@@ -146,7 +146,7 @@ const players = {
         speciality:
             "Editing / Color / Retouch",
 
-        joined: "2024",
+        joined: "2021",
 
         image: "assets/satria.jpg"
 
@@ -155,18 +155,18 @@ const players = {
 
     devi: {
 
-        number: "99",
+        number: "10",
 
-        name: "DEVI",
+        name: "BARDAN",
 
-        role: "FINANCE & SUPPORT",
+        role: "THE PRESIDENT",
 
         position: "Finance & Support",
 
         speciality:
-            "Finance / Administration / Support",
+            "Finance / Administration / Venue",
 
-        joined: "2025",
+        joined: "2023",
 
         image: "assets/devi.jpg"
 
