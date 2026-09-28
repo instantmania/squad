@@ -155,18 +155,18 @@ const players = {
 
     devi: {
 
-        number: "99",
+        number: "10",
 
-        name: "DEVI",
+        name: "BARDAN",
 
-        role: "FINANCE & SUPPORT",
+        role: "THE PRESIDENT",
 
-        position: "Finance & Support",
+        position: "THE PRESIDENT",
 
         speciality:
-            "Finance / Administration / Support",
+            "Finance / Stock / Venue",
 
-        joined: "2025",
+        joined: "2023",
 
         image: "assets/devi.jpg"
 
