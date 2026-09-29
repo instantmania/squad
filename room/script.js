@@ -211,13 +211,34 @@ const legends = {
 
         speciality: "Ganti skill / kontribusi",
 
-        joined: "2025",
+        joined: "2024",
 
         left: "2026",
 
         retired: true,
 
         image: "assets/legends/benaya.jpg"
+
+    },
+    contoh3: {
+
+        number: "22",
+
+        name: "DINI",
+
+        role: "PHOTOGRAPHER",
+
+        position: "Ganti posisi",
+
+        speciality: "Ganti skill / kontribusi",
+
+        joined: "2025",
+
+        left: "2025",
+
+        retired: true,
+
+        image: "assets/legends/nathan.jpg"
 
     }
 
