@@ -205,9 +205,9 @@ const legends = {
 
         name: "BENAYA",
 
-        role: "VIDEOGRAPHER",
+        role: "GRAPHIC DESIGNER",
 
-        position: "Ganti posisi",
+        position: "Tidak Tergantikan",
 
         speciality: "Ganti skill / kontribusi",
 
@@ -262,6 +262,48 @@ const legends = {
 
         image: "assets/legends/dini.jpg"
 
+       },
+    contoh5: {
+
+        number: "18",
+
+        name: "ADELLE",
+
+        role: "TALENT ARTIST",
+
+        position: "Ganti posisi",
+
+        speciality: "Ganti skill / kontribusi",
+
+        joined: "2024",
+
+        left: "2024",
+
+        retired: true,
+
+        image: "assets/legends/adelle.jpg"
+       
+       },
+   
+    contoh6: {
+
+        number: "88",
+
+        name: "IHSAN",
+
+        role: "PHOTOGRAPHER",
+
+        position: "Ganti posisi",
+
+        speciality: "Ganti skill / kontribusi",
+
+        joined: "2024",
+
+        left: "2025",
+
+        retired: true,
+
+        image: "assets/legends/ihsan.jpg"
     }
 
 };
