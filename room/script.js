@@ -271,7 +271,7 @@ const legends = {
 
         role: "TALENT ARTIST",
 
-        position: "Ganti posisi",
+        position: "MODEL",
 
         speciality: "Ganti skill / kontribusi",
 
