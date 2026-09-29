@@ -8,37 +8,29 @@
    SCROLL REVEAL
 ========================================= */
 
-const revealElements =
-    document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".reveal");
 
+const revealObserver = new IntersectionObserver(
 
-const revealObserver =
-    new IntersectionObserver(
+    (entries) => {
 
-        (entries) => {
+        entries.forEach((entry) => {
 
-            entries.forEach((entry) => {
+            if (entry.isIntersecting) {
 
-                if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
 
-                    entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
 
-                    revealObserver.unobserve(
-                        entry.target
-                    );
+            }
 
-                }
+        });
 
-            });
+    },
 
-        },
+    { threshold: 0.12 }
 
-        {
-            threshold: 0.12
-        }
-
-    );
-
+);
 
 revealElements.forEach((element) => {
 
@@ -48,7 +40,7 @@ revealElements.forEach((element) => {
 
 
 /* =========================================
-   PLAYER DATA
+   PLAYER DATA (squad aktif)
 ========================================= */
 
 const players = {
@@ -59,17 +51,15 @@ const players = {
 
         name: "FITRA",
 
-        role: "KANG NGABISIN CP",
+        role: "TUKANG NGABISIN CP",
 
         position: "Ujung Kiri",
 
-        speciality:
-            "Ngedit / Makan / Tidur",
+        speciality: "Ngedit / Makan / Tidur",
 
         joined: "2025",
 
         image: "assets/fitra.jpg"
-       
 
     },
 
@@ -84,8 +74,7 @@ const players = {
 
         position: "Di Tengah",
 
-        speciality:
-            "Photography / Music / Ngedit",
+        speciality: "Photography / Music / Ngedit",
 
         joined: "2022",
 
@@ -104,8 +93,7 @@ const players = {
 
         position: "Production",
 
-        speciality:
-            "Production / Coordination / Creative",
+        speciality: "Production / Coordination / Creative",
 
         joined: "2024",
 
@@ -124,8 +112,7 @@ const players = {
 
         position: "Marketing",
 
-        speciality:
-            "Marketing / Communication / Strategy",
+        speciality: "Marketing / Communication / Strategy",
 
         joined: "2026",
 
@@ -144,8 +131,7 @@ const players = {
 
         position: "Photo & Video Editor",
 
-        speciality:
-            "Editing / Color / Retouch",
+        speciality: "Editing / Color / Retouch",
 
         joined: "2021",
 
@@ -164,8 +150,7 @@ const players = {
 
         position: "Finance & Support",
 
-        speciality:
-            "Finance / Administration / Venue",
+        speciality: "Finance / Administration / Venue",
 
         joined: "2023",
 
@@ -174,11 +159,19 @@ const players = {
     }
 
 };
+
+
 /* =========================================
-   A. LEGENDS DATA (ex-member)
+   LEGENDS DATA (ex-member)
    Bentuk sama dengan `players`, ditambah:
    left    : tahun keluar
    retired : true = badge RETIRED di kartu
+
+   !! Dua entri di bawah hanya CONTOH.
+   !! Ganti dengan data asli (atau hapus
+   !! isinya jadi `const legends = {}` agar
+   !! section tersembunyi) sebelum publish.
+   Foto: assets/legends/<id>.jpg
 ========================================= */
 
 const legends = {
@@ -193,8 +186,7 @@ const legends = {
 
         position: "Ganti posisi",
 
-        speciality:
-            "Ganti skill / kontribusi",
+        speciality: "Ganti skill / kontribusi",
 
         joined: "2023",
 
@@ -217,8 +209,7 @@ const legends = {
 
         position: "Ganti posisi",
 
-        speciality:
-            "Ganti skill / kontribusi",
+        speciality: "Ganti skill / kontribusi",
 
         joined: "2023",
 
@@ -237,47 +228,36 @@ const legends = {
 const people = { ...players, ...legends };
 
 
-
 /* =========================================
    MODAL ELEMENTS
 ========================================= */
 
-const modal =
-    document.getElementById("playerModal");
+const modal = document.getElementById("playerModal");
 
-const modalClose =
-    document.getElementById("modalClose");
+const modalClose = document.getElementById("modalClose");
 
-const modalImage =
-    document.getElementById("modalImage");
+const modalImage = document.getElementById("modalImage");
 
-const modalNumber =
-    document.getElementById("modalNumber");
+const modalNumber = document.getElementById("modalNumber");
 
-const modalName =
-    document.getElementById("modalName");
+const modalName = document.getElementById("modalName");
 
-const modalRole =
-    document.getElementById("modalRole");
+const modalRole = document.getElementById("modalRole");
 
-const modalPosition =
-    document.getElementById("modalPosition");
+const modalPosition = document.getElementById("modalPosition");
 
-const modalSpeciality =
-    document.getElementById("modalSpeciality");
+const modalSpeciality = document.getElementById("modalSpeciality");
 
-const modalJoined =
-    document.getElementById("modalJoined");
+const modalJoinedLabel = document.getElementById("modalJoinedLabel");
+
+const modalJoined = document.getElementById("modalJoined");
 
 
 /* =========================================
-   B. OPEN PLAYER (pengganti blok lama)
-   Event delegation: kartu yang dibuat lewat JS
-   (legends) ikut bisa diklik.
+   OPEN / CLOSE MODAL
 ========================================= */
 
-const modalJoinedLabel =
-    document.getElementById("modalJoinedLabel");
+let lastFocused = null;
 
 
 function openPlayer(playerId) {
@@ -285,6 +265,9 @@ function openPlayer(playerId) {
     const player = people[playerId];
 
     if (!player) return;
+
+
+    lastFocused = document.activeElement;
 
 
     modalImage.src = player.image;
@@ -320,22 +303,10 @@ function openPlayer(playerId) {
 
     document.body.style.overflow = "hidden";
 
+    modalClose.focus();
+
 }
 
-
-document.addEventListener("click", (event) => {
-
-    const card = event.target.closest(".player-card");
-
-    if (!card) return;
-
-    openPlayer(card.dataset.player);
-
-});
-
-/* =========================================
-   CLOSE MODAL
-========================================= */
 
 function closeModal() {
 
@@ -343,34 +314,67 @@ function closeModal() {
 
     document.body.style.overflow = "";
 
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+
 }
 
 
-modalClose.addEventListener(
-    "click",
-    closeModal
-);
+/* klik kartu squad, kartu legends, atau pemain di formation */
+document.addEventListener("click", (event) => {
+
+    const trigger = event.target.closest("[data-player]");
+
+    if (!trigger) return;
+
+    openPlayer(trigger.dataset.player);
+
+});
 
 
-modal.addEventListener(
-    "click",
-    (event) => {
+/* Enter / Spasi pada kartu (article) = sama seperti klik */
+document.addEventListener("keydown", (event) => {
 
-        if (
-            event.target === modal
-        ) {
+    if (event.key !== "Enter" && event.key !== " ") return;
 
-            closeModal();
+    const card = event.target.closest("article[data-player]");
 
-        }
+    if (!card || card !== event.target) return;
+
+    event.preventDefault();
+
+    openPlayer(card.dataset.player);
+
+});
+
+
+modalClose.addEventListener("click", closeModal);
+
+
+modal.addEventListener("click", (event) => {
+
+    if (event.target === modal) closeModal();
+
+});
+
+
+document.addEventListener("keydown", (event) => {
+
+    if (
+        event.key === "Escape" &&
+        modal.classList.contains("active")
+    ) {
+
+        closeModal();
 
     }
-);
+
+});
+
 
 /* =========================================
-   C. RENDER LEGENDS
-   Markup kartu sama persis dengan kartu squad
-   di index.html, jadi CSS-nya ikut.
+   RENDER LEGENDS
+   Markup kartu sama persis dengan kartu squad.
+   Data kosong → section & link navbar tersembunyi.
 ========================================= */
 
 const escapeHTML = (value) =>
@@ -394,7 +398,6 @@ function renderLegends() {
     const entries = Object.entries(legends);
 
 
-    /* belum ada data → section & link navbar tetap tersembunyi */
     if (!section || !list || !entries.length) return;
 
 
@@ -405,7 +408,9 @@ function renderLegends() {
 
     /* yang paling baru keluar tampil duluan */
     entries.sort(
-        (a, b) => Number(b[1].left) - Number(a[1].left)
+        (a, b) =>
+            Number(b[1].left) - Number(a[1].left) ||
+            a[1].name.localeCompare(b[1].name)
     );
 
 
@@ -418,6 +423,8 @@ function renderLegends() {
         card.dataset.player = id;
 
         card.tabIndex = 0;
+
+        card.setAttribute("role", "button");
 
 
         card.innerHTML = `
@@ -461,20 +468,6 @@ function renderLegends() {
         `;
 
 
-        /* Enter / Spasi = sama seperti klik */
-        card.addEventListener("keydown", (event) => {
-
-            if (event.key === "Enter" || event.key === " ") {
-
-                event.preventDefault();
-
-                openPlayer(id);
-
-            }
-
-        });
-
-
         list.append(card);
 
         /* kartu baru harus didaftarkan ke observer,
@@ -487,92 +480,52 @@ function renderLegends() {
 
 
 renderLegends();
-/* =========================================
-   ESC KEY
-========================================= */
-
-document.addEventListener(
-    "keydown",
-    (event) => {
-
-        if (
-            event.key === "Escape" &&
-            modal.classList.contains("active")
-        ) {
-
-            closeModal();
-
-        }
-
-    }
-);
 
 
 /* =========================================
    MOBILE MENU
 ========================================= */
 
-const menuButton =
-    document.getElementById("menuButton");
+const menuButton = document.getElementById("menuButton");
+
+const nav = document.querySelector(".nav");
 
 
-const nav =
-    document.querySelector(".nav");
+menuButton.addEventListener("click", () => {
+
+    const open = nav.classList.toggle("mobile-open");
+
+    menuButton.setAttribute("aria-expanded", String(open));
+
+});
 
 
-menuButton.addEventListener(
-    "click",
-    () => {
+/* menu tertutup sendiri setelah memilih link */
+nav.addEventListener("click", (event) => {
 
-        nav.classList.toggle(
-            "mobile-open"
-        );
+    if (event.target.closest("a")) {
+
+        nav.classList.remove("mobile-open");
+
+        menuButton.setAttribute("aria-expanded", "false");
 
     }
-);
+
+});
 
 
 /* =========================================
    HEADER SCROLL
 ========================================= */
 
-const header =
-    document.getElementById("header");
+const header = document.getElementById("header");
 
 
-let lastScroll = 0;
+window.addEventListener("scroll", () => {
 
+    header.classList.toggle("scrolled", window.scrollY > 80);
 
-window.addEventListener(
-    "scroll",
-    () => {
-
-        const currentScroll =
-            window.scrollY;
-
-
-        if (
-            currentScroll > 80
-        ) {
-
-            header.classList.add(
-                "scrolled"
-            );
-
-        } else {
-
-            header.classList.remove(
-                "scrolled"
-            );
-
-        }
-
-
-        lastScroll =
-            currentScroll;
-
-    }
-);
+});
 
 
 /* =========================================
@@ -583,13 +536,10 @@ document
     .querySelectorAll(".formation-player")
     .forEach((player) => {
 
-        player.addEventListener(
-            "mouseenter",
-            () => {
+        player.addEventListener("mouseenter", () => {
 
-                player.style.zIndex = "5";
+            player.style.zIndex = "5";
 
-            }
-        );
+        });
 
     });
