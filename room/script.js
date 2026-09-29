@@ -260,7 +260,7 @@ const legends = {
 
         retired: true,
 
-        image: "assets/legends/nathan.jpg"
+        image: "assets/legends/dini.jpg"
 
     }
 
