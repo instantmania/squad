@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Instant Mania — Creative Football Club</title>
+<meta name="description" content="Instant Mania — creative / photo / experience from Bandung, Indonesia. One team. Many roles. One mania.">
+
+<!-- preview saat link dibagikan (WhatsApp, Instagram, dll.) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Instant Mania — Creative Football Club">
+<meta property="og:description" content="One team. Many roles. One mania.">
+<meta property="og:url" content="https://instantmania.github.io/squad/">
+<meta property="og:image" content="https://instantmania.github.io/squad/assets/team.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111'/><text x='50' y='70' font-size='58' font-weight='900' text-anchor='middle' fill='white' font-family='sans-serif'>IM</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="room/style.css">
+<link rel="stylesheet" href="room/legends.css">
 </head>
 
 <body>
@@ -31,13 +43,14 @@
 <a href="#squad">SQUAD</a>
 <a href="#formation">FORMATION</a>
 <a href="#matchday">MATCHDAY</a>
+<a href="#legends" id="legendsNav" hidden>LEGENDS</a>
 <a href="#story">THE STORY</a>
 </nav>
 
 <div class="header-right">
 <span class="language">ID</span>
 
-<button class="menu-button" id="menuButton" aria-label="Menu">
+<button class="menu-button" id="menuButton" aria-label="Menu" aria-expanded="false">
 <span></span>
 <span></span>
 </button>
@@ -84,7 +97,6 @@ BANDUNG, INDONESIA
 
 <div class="hero-image reveal">
 
-<!-- GANTI DENGAN FOTO TIM -->
 <img
 src="assets/team.jpg"
 alt="Instant Mania Squad"
@@ -132,15 +144,10 @@ VIEW ALL PLAYERS →
 
 <div class="squad-grid">
 
-<!-- PLAYER -->
-
-<article
-class="player-card reveal"
-data-player="fitra"
->
+<article class="player-card reveal" data-player="fitra" tabindex="0" role="button">
 
 <div class="player-image">
-                <img src="assets/fitra.jpg" alt="Fitra">
+<img src="assets/fitra.jpg" alt="Fitra">
 </div>
 
 <div class="player-info">
@@ -150,9 +157,8 @@ data-player="fitra"
 </div>
 
 <div class="player-details">
-                    
-                    <h3>FITRA</h3>
-                    <span>TUKANG NGABISIN CP</span>
+<h3>FITRA</h3>
+<span>TUKANG NGABISIN CP</span>
 </div>
 
 <span class="player-arrow">↗</span>
@@ -162,10 +168,7 @@ data-player="fitra"
 </article>
 
 
-<article
-class="player-card reveal"
-data-player="alip"
->
+<article class="player-card reveal" data-player="alip" tabindex="0" role="button">
 
 <div class="player-image">
 <img src="assets/alip.jpg" alt="Alip">
@@ -189,10 +192,7 @@ data-player="alip"
 </article>
 
 
-<article
-class="player-card reveal"
-data-player="naufal"
->
+<article class="player-card reveal" data-player="naufal" tabindex="0" role="button">
 
 <div class="player-image">
 <img src="assets/naufal.jpg" alt="Naufal">
@@ -216,13 +216,10 @@ data-player="naufal"
 </article>
 
 
-<article
-class="player-card reveal"
-data-player="nicho"
->
+<article class="player-card reveal" data-player="nicho" tabindex="0" role="button">
 
 <div class="player-image">
-<img src="assets/nicho.jpg" alt="nicho">
+<img src="assets/nicho.jpg" alt="Nicho">
 </div>
 
 <div class="player-info">
@@ -243,10 +240,7 @@ data-player="nicho"
 </article>
 
 
-<article
-class="player-card reveal"
-data-player="aang"
->
+<article class="player-card reveal" data-player="aang" tabindex="0" role="button">
 
 <div class="player-image">
 <img src="assets/aang.jpg" alt="Aang">
@@ -270,10 +264,7 @@ data-player="aang"
 </article>
 
 
-<article
-class="player-card reveal"
-data-player="bardan"
->
+<article class="player-card reveal" data-player="bardan" tabindex="0" role="button">
 
 <div class="player-image">
 <img src="assets/bardan.jpg" alt="Bardan">
@@ -337,7 +328,7 @@ The Instant Mania way.
 <div class="pitch-box bottom"></div>
 
 
-<button class="formation-player player-1">
+<button type="button" class="formation-player player-1" data-player="fitra">
 <span class="formation-photo">
 <img src="assets/fitra.jpg" alt="">
 </span>
@@ -346,7 +337,7 @@ The Instant Mania way.
 </button>
 
 
-<button class="formation-player player-2">
+<button type="button" class="formation-player player-2" data-player="alip">
 <span class="formation-photo">
 <img src="assets/alip.jpg" alt="">
 </span>
@@ -355,7 +346,7 @@ The Instant Mania way.
 </button>
 
 
-<button class="formation-player player-3">
+<button type="button" class="formation-player player-3" data-player="naufal">
 <span class="formation-photo">
 <img src="assets/naufal.jpg" alt="">
 </span>
@@ -364,7 +355,7 @@ The Instant Mania way.
 </button>
 
 
-<button class="formation-player player-4">
+<button type="button" class="formation-player player-4" data-player="nicho">
 <span class="formation-photo">
 <img src="assets/nicho.jpg" alt="">
 </span>
@@ -373,7 +364,7 @@ The Instant Mania way.
 </button>
 
 
-<button class="formation-player player-5">
+<button type="button" class="formation-player player-5" data-player="aang">
 <span class="formation-photo">
 <img src="assets/aang.jpg" alt="">
 </span>
@@ -382,7 +373,7 @@ The Instant Mania way.
 </button>
 
 
-<button class="formation-player player-6">
+<button type="button" class="formation-player player-6" data-player="bardan">
 <span class="formation-photo">
 <img src="assets/bardan.jpg" alt="">
 </span>
@@ -555,30 +546,10 @@ with the best team.
 
 </section>
 
-<!--
-=====================================================================
- PATCH index.html — THE LEGENDS
- Ada 4 perubahan kecil:
-=====================================================================
--->
-
-
-<!-- 1) NAVBAR: tambah link di antara MATCHDAY dan THE STORY.
-        `hidden` dilepas otomatis oleh JS kalau data legends ada. -->
-
-<nav class="nav">
-<a href="#squad">SQUAD</a>
-<a href="#formation">FORMATION</a>
-<a href="#matchday">MATCHDAY</a>
-<a href="#legends" id="legendsNav" hidden>LEGENDS</a>
-<a href="#story">THE STORY</a>
-</nav>
-
-
-<!-- 2) SECTION BARU: tempel di antara section MATCHDAY dan STORY -->
 
 <!-- =========================================
     LEGENDS
+    (tersembunyi otomatis sampai ada data di script.js)
 ========================================= -->
 
 <section class="section legends-section" id="legends" hidden>
@@ -607,26 +578,6 @@ Retired numbers stay retired.
 </section>
 
 
-<!-- 3) SECTION STORY: ubah nomornya dari 04 menjadi 05 -->
-
-<div class="section-number">
-05
-</div>
-
-
-<!-- 4) MODAL: beri id pada label JOINED
-        (sebelumnya: <span>JOINED</span>) -->
-
-<div class="modal-row">
-
-<span id="modalJoinedLabel">JOINED</span>
-
-<strong id="modalJoined">
-2025
-</strong>
-
-</div>
-    
 <!-- =========================================
     STORY
 ========================================= -->
@@ -636,7 +587,7 @@ Retired numbers stay retired.
 <div class="section-heading reveal">
 
 <div class="section-number">
-04
+05
 </div>
 
 <div>
@@ -788,26 +739,17 @@ ONE TEAM. MANY ROLES. ONE MANIA.
     PLAYER MODAL
 ========================================= -->
 
-<div class="player-modal" id="playerModal">
+<div class="player-modal" id="playerModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
 
 <div class="modal-inner">
 
-<button
-class="modal-close"
-id="modalClose"
->
+<button type="button" class="modal-close" id="modalClose" aria-label="Tutup">
 ×
 </button>
 
 
 <div class="modal-image">
-
-<img
-id="modalImage"
-src=""
-alt=""
->
-
+<img id="modalImage" alt="">
 </div>
 
 
@@ -821,11 +763,8 @@ alt=""
 FITRA
 </h2>
 
-<span
-class="modal-role"
-id="modalRole"
->
-KANG NGABISIN CP
+<span class="modal-role" id="modalRole">
+TUKANG NGABISIN CP
 </span>
 
 
@@ -835,8 +774,9 @@ KANG NGABISIN CP
 <div class="modal-row">
 
 <span>POSITION</span>
+
 <strong id="modalPosition">
-KANG NGABISIN CP
+Ujung Kiri
 </strong>
 
 </div>
@@ -855,7 +795,7 @@ Ngedit / Makan / Tidur
 
 <div class="modal-row">
 
-<span>JOINED</span>
+<span id="modalJoinedLabel">JOINED</span>
 
 <strong id="modalJoined">
 2025
