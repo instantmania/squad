@@ -180,7 +180,7 @@ const legends = {
 
         number: "11",
 
-        name: "NAMA EX-MEMBER 1",
+        name: "NATHAN",
 
         role: "PHOTOGRAPHER",
 
@@ -188,22 +188,22 @@ const legends = {
 
         speciality: "Ganti skill / kontribusi",
 
-        joined: "2023",
+        joined: "March, 2026",
 
-        left: "2024",
+        left: "September, 2026",
 
         retired: true,
 
-        image: "assets/legends/contoh1.jpg"
+        image: "assets/legends/nathan.jpg"
 
     },
 
 
     contoh2: {
 
-        number: "05",
+        number: "15",
 
-        name: "NAMA EX-MEMBER 2",
+        name: "BENAYA",
 
         role: "VIDEOGRAPHER",
 
@@ -211,13 +211,13 @@ const legends = {
 
         speciality: "Ganti skill / kontribusi",
 
-        joined: "2023",
+        joined: "2025",
 
-        left: "2025",
+        left: "2026",
 
-        retired: false,
+        retired: true,
 
-        image: "assets/legends/contoh2.jpg"
+        image: "assets/legends/benaya.jpg"
 
     }
 
