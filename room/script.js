@@ -220,6 +220,28 @@ const legends = {
         image: "assets/legends/benaya.jpg"
 
     },
+
+   contoh2: {
+
+        number: "12",
+
+        name: "SANDI",
+
+        role: "PRODUCTION ENGINERING",
+
+        position: "Ganti posisi",
+
+        speciality: "Teknisi Mesin / Software",
+
+        joined: "2021",
+
+        left: "present",
+
+        retired: false,
+
+        image: "assets/legends/sandi.jpg"
+
+    },
     contoh3: {
 
         number: "22",
