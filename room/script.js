@@ -221,7 +221,7 @@ const legends = {
 
     },
 
-   contoh2: {
+   contoh3: {
 
         number: "12",
 
@@ -242,7 +242,7 @@ const legends = {
         image: "assets/legends/sandi.jpg"
 
     },
-    contoh3: {
+    contoh4: {
 
         number: "22",
 
