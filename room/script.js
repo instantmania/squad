@@ -213,7 +213,7 @@ const legends = {
 
         joined: "2024",
 
-        left: "2026",
+        left: "2025",
 
         retired: true,
 
