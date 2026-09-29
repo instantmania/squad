@@ -304,6 +304,49 @@ const legends = {
         retired: true,
 
         image: "assets/legends/ihsan.jpg"
+
+       },
+   
+    contoh7: {
+
+        number: "03",
+
+        name: "TYAS",
+
+        role: "PHOTOGRAPHER",
+
+        position: "Ganti posisi",
+
+        speciality: "Ganti skill / kontribusi",
+
+        joined: "2024",
+
+        left: "2025",
+
+        retired: true,
+
+        image: "assets/legends/tyas.jpg"
+       },
+   
+    contoh8: {
+
+        number: "06",
+
+        name: "SALSA",
+
+        role: "PHOTOGRAPHER",
+
+        position: "Ganti posisi",
+
+        speciality: "Ganti skill / kontribusi",
+
+        joined: "2024",
+
+        left: "2025",
+
+        retired: true,
+
+        image: "assets/legends/salsa.jpg"
     }
 
 };
