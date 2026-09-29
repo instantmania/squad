@@ -1,0 +1,71 @@
+<!--
+=====================================================================
+ PATCH index.html — THE LEGENDS
+ Ada 4 perubahan kecil:
+=====================================================================
+-->
+
+
+<!-- 1) NAVBAR: tambah link di antara MATCHDAY dan THE STORY.
+        `hidden` dilepas otomatis oleh JS kalau data legends ada. -->
+
+<nav class="nav">
+<a href="#squad">SQUAD</a>
+<a href="#formation">FORMATION</a>
+<a href="#matchday">MATCHDAY</a>
+<a href="#legends" id="legendsNav" hidden>LEGENDS</a>
+<a href="#story">THE STORY</a>
+</nav>
+
+
+<!-- 2) SECTION BARU: tempel di antara section MATCHDAY dan STORY -->
+
+<!-- =========================================
+    LEGENDS
+========================================= -->
+
+<section class="section legends-section" id="legends" hidden>
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+04
+</div>
+
+<div>
+<h2>THE LEGENDS</h2>
+
+<p>
+Left the pitch.<br>
+Never left the story.<br>
+Retired numbers stay retired.
+</p>
+</div>
+
+</div>
+
+
+<div class="squad-grid" id="legendsList"></div>
+
+</section>
+
+
+<!-- 3) SECTION STORY: ubah nomornya dari 04 menjadi 05 -->
+
+<div class="section-number">
+05
+</div>
+
+
+<!-- 4) MODAL: beri id pada label JOINED
+        (sebelumnya: <span>JOINED</span>) -->
+
+<div class="modal-row">
+
+<span id="modalJoinedLabel">JOINED</span>
+
+<strong id="modalJoined">
+2025
+</strong>
+
+</div>

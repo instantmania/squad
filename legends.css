@@ -1,0 +1,72 @@
+/* =========================================
+   LEGENDS
+   Tempel di style.css, di bawah blok SQUAD
+   (atau di paling bawah sebelum @media).
+   Kartunya memakai .player-card yang sudah
+   ada, jadi hanya perbedaannya yang diatur.
+========================================= */
+
+/* foto hitam-putih; berwarna sebagian saat hover */
+.legend-card .player-image {
+
+    position: relative;
+
+}
+
+
+.legend-card .player-image img {
+
+    filter: grayscale(1);
+
+}
+
+
+.legend-card:hover .player-image img {
+
+    filter: grayscale(.25);
+
+}
+
+
+/* nomor abu-abu: sudah bukan pemain aktif */
+.legend-card .player-number {
+
+    color: var(--gray);
+
+}
+
+
+/* badge nomor dipensiunkan */
+.legend-badge {
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 10px;
+
+    padding: 4px 8px;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-family: var(--heading);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .1em;
+
+}
+
+
+/* kartu legends bisa difokus lewat keyboard */
+.legend-card:focus-visible {
+
+    outline: 2px solid var(--blue);
+
+    outline-offset: 4px;
+
+}
