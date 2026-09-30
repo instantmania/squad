@@ -1,0 +1,448 @@
+/* =========================================
+   MATCHDAY → ARTIKEL
+   Simpan sebagai room/matchday.css
+   Dipakai oleh index.html DAN halaman artikel.
+========================================= */
+
+
+/* ---------- kartu misi (foto besar) jadi link ---------- */
+
+a.mission-image {
+
+    display: block;
+
+}
+
+
+.mission-image img {
+
+    transition: transform 1s ease;
+
+}
+
+
+a.mission-image:hover img {
+
+    transform: scale(1.03);
+
+}
+
+
+/* gradasi gelap di bawah foto supaya tulisan putih terbaca */
+.mission-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.72) 0%,
+        rgba(0,0,0,0) 60%
+    );
+
+    pointer-events: none;
+
+}
+
+
+.mission-overlay {
+
+    z-index: 1;
+
+}
+
+
+.mission-overlay span {
+
+    color: #8db3ff;
+
+    text-shadow: 0 1px 8px rgba(0,0,0,.5);
+
+}
+
+
+/* ---------- daftar fixtures jadi link ---------- */
+
+a.fixture {
+
+    color: inherit;
+
+}
+
+
+a.fixture .fixture-info strong {
+
+    transition: color .25s ease;
+
+}
+
+
+a.fixture > span:last-child {
+
+    transition:
+        transform .3s ease,
+        color .3s ease;
+
+}
+
+
+a.fixture:hover .fixture-info strong,
+a.fixture:hover > span:last-child {
+
+    color: var(--blue);
+
+}
+
+
+a.fixture:hover > span:last-child {
+
+    transform: translateX(4px);
+
+}
+
+
+a.fixture:focus-visible,
+a.mission-image:focus-visible,
+.article-back:focus-visible {
+
+    outline: 2px solid var(--blue);
+
+    outline-offset: 4px;
+
+}
+
+
+/* =========================================
+   HALAMAN ARTIKEL
+========================================= */
+
+.article {
+
+    padding: 130px 4vw 90px;
+
+}
+
+
+.article-back {
+
+    font-family: var(--heading);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: .06em;
+
+    transition: color .2s ease;
+
+}
+
+
+.article-back:hover {
+
+    color: var(--blue);
+
+}
+
+
+.article-head {
+
+    margin-top: 40px;
+
+    display: grid;
+
+    gap: 22px;
+
+}
+
+
+.article-kicker {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    font-family: var(--heading);
+
+    font-size: 12px;
+
+    letter-spacing: .15em;
+
+    color: var(--gray);
+
+}
+
+
+.article-status {
+
+    padding: 3px 8px;
+
+    background: var(--blue);
+
+    color: var(--white);
+
+    font-weight: 600;
+
+    letter-spacing: .1em;
+
+}
+
+
+.article-head h1 {
+
+    font-family: var(--heading);
+
+    font-size: clamp(60px, 10vw, 150px);
+
+    line-height: .82;
+
+    font-weight: 900;
+
+    letter-spacing: -.03em;
+
+}
+
+
+.article-tagline {
+
+    max-width: 520px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+.article-cover {
+
+    margin-top: 50px;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #ddd;
+
+}
+
+
+.article-cover img {
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.article-layout {
+
+    margin-top: 60px;
+
+    display: grid;
+
+    grid-template-columns: 260px 1fr;
+
+    gap: 60px;
+
+}
+
+
+.article-facts {
+
+    align-self: start;
+
+    border-top: 1px solid var(--black);
+
+}
+
+
+.article-facts div {
+
+    display: grid;
+
+    gap: 4px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid var(--light-gray);
+
+}
+
+
+.article-facts dt {
+
+    font-family: var(--heading);
+
+    font-size: 10px;
+
+    letter-spacing: .08em;
+
+    color: var(--gray);
+
+}
+
+
+.article-facts dd {
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+}
+
+
+.article-text {
+
+    max-width: 640px;
+
+}
+
+
+.article-text p {
+
+    font-size: 15px;
+
+    line-height: 1.85;
+
+    color: #333;
+
+}
+
+
+.article-text p + p {
+
+    margin-top: 1.3em;
+
+}
+
+
+.article-text .article-lead {
+
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    color: var(--black);
+
+}
+
+
+.article-quote {
+
+    margin: 2em 0;
+
+    padding-left: 22px;
+
+    border-left: 3px solid var(--blue);
+
+    font-family: var(--heading);
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+}
+
+
+.article-gallery {
+
+    margin-top: 80px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.article-gallery figure {
+
+    aspect-ratio: .8;
+
+    overflow: hidden;
+
+    background: #ddd;
+
+}
+
+
+.article-gallery img {
+
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: grayscale(10%);
+
+    transition:
+        transform .6s ease,
+        filter .6s ease;
+
+}
+
+
+.article-gallery figure:hover img {
+
+    transform: scale(1.04);
+
+    filter: grayscale(0);
+
+}
+
+
+.article-footer-nav {
+
+    margin-top: 80px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--light-gray);
+
+}
+
+
+@media (max-width: 900px) {
+
+    .article {
+
+        padding: 100px 20px 60px;
+
+    }
+
+
+    .article-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+
+    .article-gallery {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .article-text .article-lead {
+
+        font-size: 18px;
+
+    }
+
+}
