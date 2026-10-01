@@ -133,7 +133,7 @@ const players = {
 
         speciality: "Editing / Color / Retouch",
 
-        joined: "2021",
+        joined: "2022",
 
         image: "assets/aang.jpg"
 
@@ -233,7 +233,7 @@ const legends = {
 
         speciality: "Teknisi Mesin / Software",
 
-        joined: "2021",
+        joined: "2022",
 
         left: "present",
 
@@ -319,9 +319,9 @@ const legends = {
 
         speciality: "Ganti skill / kontribusi",
 
-        joined: "2024",
+        joined: "2022",
 
-        left: "2025",
+        left: "2024",
 
         retired: true,
 
@@ -340,7 +340,7 @@ const legends = {
 
         speciality: "Ganti skill / kontribusi",
 
-        joined: "2024",
+        joined: "2022",
 
         left: "2025",
 
