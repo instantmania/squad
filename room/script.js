@@ -89,11 +89,11 @@ const players = {
 
         name: "NAUFAL",
 
-        role: "PRODUCTION",
+        role: "KANG NGEDIT",
 
-        position: "Production",
+        position: "Dimana Saja",
 
-        speciality: "Production / Coordination / Creative",
+        speciality: "Production / Coordination / Printing",
 
         joined: "2024",
 
@@ -108,11 +108,11 @@ const players = {
 
         name: "NICHO",
 
-        role: "MARKETING",
+        role: "ORANG IT",
 
-        position: "Marketing",
+        position: "Di Kanan",
 
-        speciality: "Marketing / Communication / Strategy",
+        speciality: "Mengelola hidup sehari-hari",
 
         joined: "2026",
 
@@ -127,11 +127,11 @@ const players = {
 
         name: "AANG",
 
-        role: "EDITOR",
+        role: "NGEDIT APA SAJA",
 
-        position: "Photo & Video Editor",
+        position: "Di Tempat Kosong",
 
-        speciality: "Editing / Color / Retouch",
+        speciality: "Edit Cerita Hidup / Edit Jadwal Kerja",
 
         joined: "2022",
 
@@ -148,7 +148,7 @@ const players = {
 
         role: "THE PRESIDENT",
 
-        position: "Finance & Support",
+        position: "Di Belakang Layar",
 
         speciality: "Finance / Administration / Venue",
 
@@ -182,11 +182,11 @@ const legends = {
 
         name: "NATHAN",
 
-        role: "PHOTOGRAPHER",
+        role: "PROGRAMMER",
 
-        position: "Ganti posisi",
+        position: "PULANG KE KAMPUNG HALAMAN",
 
-        speciality: "Ganti skill / kontribusi",
+        speciality: "Segala Bisa Sih",
 
         joined: "March, 2026",
 
@@ -209,7 +209,7 @@ const legends = {
 
         position: "Tidak Tergantikan",
 
-        speciality: "Ganti skill / kontribusi",
+        speciality: "Terlalu Spesial",
 
         joined: "2024",
 
@@ -229,7 +229,7 @@ const legends = {
 
         role: "PRODUCTION ENGINERING",
 
-        position: "Ganti posisi",
+        position: "Naik Turun Tangga",
 
         speciality: "Teknisi Mesin / Software",
 
@@ -248,11 +248,11 @@ const legends = {
 
         name: "DINI",
 
-        role: "PHOTOGRAPHER",
+        role: "EDITOR",
 
-        position: "Ganti posisi",
+        position: "Biasanya di Kiri",
 
-        speciality: "Ganti skill / kontribusi",
+        speciality: "Kang Cerita",
 
         joined: "2025",
 
@@ -271,9 +271,9 @@ const legends = {
 
         role: "TALENT ARTIST",
 
-        position: "MODEL",
+        position: "SOCIAL MEDIA",
 
-        speciality: "Ganti skill / kontribusi",
+        speciality: "Model / Talent",
 
         joined: "2024",
 
@@ -291,11 +291,11 @@ const legends = {
 
         name: "IHSAN",
 
-        role: "PHOTOGRAPHER",
+        role: "WIBU",
 
-        position: "Ganti posisi",
+        position: "Dulu di Kanan",
 
-        speciality: "Ganti skill / kontribusi",
+        speciality: "Anime / おたく",
 
         joined: "2024",
 
@@ -313,11 +313,11 @@ const legends = {
 
         name: "TYAS",
 
-        role: "PHOTOGRAPHER",
+        role: "PENDAKI",
 
-        position: "Ganti posisi",
+        position: "Puncak Gunung",
 
-        speciality: "Ganti skill / kontribusi",
+        speciality: "Mencintai Alam",
 
         joined: "2022",
 
@@ -334,11 +334,11 @@ const legends = {
 
         name: "SALSA",
 
-        role: "PHOTOGRAPHER",
+        role: "EDITING",
 
-        position: "Ganti posisi",
+        position: "Ujung Kanan",
 
-        speciality: "Ganti skill / kontribusi",
+        speciality: "Ngedit / Ngedit / Ngedit",
 
         joined: "2022",
 
