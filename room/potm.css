@@ -1,0 +1,711 @@
+/* =========================================
+   PLAYER OF THE MONTH
+   Simpan sebagai: room/potm.css
+   Dipakai bersama room/style.css
+========================================= */
+
+.potm-page {
+
+    padding-top: 72px;
+
+}
+
+
+.nav a.active {
+
+    color: var(--blue);
+
+}
+
+
+/* judul halaman memakai gaya yang sama dengan h2 section */
+.section-heading h1 {
+
+    font-family: var(--heading);
+
+    font-size: clamp(55px, 8vw, 120px);
+
+    line-height: .8;
+
+    font-weight: 900;
+
+    letter-spacing: -.03em;
+
+}
+
+
+.demo-banner {
+
+    padding: 10px 4vw;
+
+    background: var(--blue);
+
+    color: var(--white);
+
+    text-align: center;
+
+    font-family: var(--heading);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: .12em;
+
+}
+
+
+.potm-hero {
+
+    border-top: 0;
+
+}
+
+
+/* ---------- pemenang ---------- */
+
+.winner {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5vw;
+
+    align-items: stretch;
+
+}
+
+
+.photo {
+
+    position: relative;
+
+    aspect-ratio: .86;
+
+    overflow: hidden;
+
+    background: #ddd;
+
+}
+
+
+.photo-label {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: var(--heading);
+
+    font-size: 13px;
+
+    letter-spacing: .15em;
+
+    color: #9b9b94;
+
+}
+
+
+.photo img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.ribbon,
+.tag,
+.big-number {
+
+    position: absolute;
+
+    z-index: 1;
+
+}
+
+
+.ribbon {
+
+    top: 0;
+
+    left: 0;
+
+    padding: 12px 18px;
+
+    background: var(--blue);
+
+    color: var(--white);
+
+    font-family: var(--heading);
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+}
+
+
+.tag {
+
+    top: 0;
+
+    right: 0;
+
+    padding: 12px 16px;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-family: var(--heading);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+}
+
+
+.big-number {
+
+    left: 22px;
+
+    bottom: 6px;
+
+    font-family: var(--heading);
+
+    font-size: clamp(110px, 16vw, 230px);
+
+    line-height: .85;
+
+    font-weight: 900;
+
+    color: transparent;
+
+    -webkit-text-stroke: 2px var(--white);
+
+    text-shadow: 0 2px 18px rgba(0,0,0,.25);
+
+}
+
+
+.info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.kicker {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-family: var(--heading);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: .15em;
+
+    color: var(--blue);
+
+}
+
+
+.kicker svg {
+
+    width: 14px;
+
+    height: 14px;
+
+    flex: none;
+
+}
+
+
+.info h2 {
+
+    margin-top: 18px;
+
+    font-family: var(--heading);
+
+    font-size: clamp(80px, 13vw, 190px);
+
+    line-height: .78;
+
+    font-weight: 900;
+
+    letter-spacing: -.04em;
+
+}
+
+
+.role {
+
+    margin-top: 22px;
+
+    font-family: var(--heading);
+
+    font-size: 14px;
+
+    letter-spacing: .12em;
+
+}
+
+
+.wins-line {
+
+    margin-top: 8px;
+
+    font-family: var(--heading);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: .12em;
+
+    color: var(--blue);
+
+}
+
+
+.divider {
+
+    margin: 34px 0;
+
+    height: 1px;
+
+    background: var(--light-gray);
+
+}
+
+
+.reason {
+
+    max-width: 440px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+.stats {
+
+    margin-top: 34px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--black);
+
+}
+
+
+.stat {
+
+    padding: 16px 0 6px;
+
+    border-bottom: 1px solid var(--light-gray);
+
+}
+
+
+.stat strong {
+
+    display: block;
+
+    font-family: var(--heading);
+
+    font-size: 46px;
+
+    line-height: .9;
+
+    font-weight: 800;
+
+}
+
+
+.stat span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-family: var(--heading);
+
+    font-size: 11px;
+
+    letter-spacing: .1em;
+
+}
+
+
+.stat small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--gray);
+
+    font-size: 10px;
+
+}
+
+
+.link {
+
+    margin-top: 28px;
+
+    font-family: var(--heading);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: .04em;
+
+    transition: color .2s ease;
+
+}
+
+
+.link:hover {
+
+    color: var(--blue);
+
+}
+
+
+/* belum ada pemenang */
+.empty {
+
+    grid-column: 1 / -1;
+
+    padding: 80px 0;
+
+    border-top: 1px solid var(--black);
+
+    border-bottom: 1px solid var(--light-gray);
+
+}
+
+
+.empty-title {
+
+    display: block;
+
+    font-family: var(--heading);
+
+    font-size: clamp(48px, 7vw, 100px);
+
+    line-height: .85;
+
+    font-weight: 900;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1.5px var(--gray);
+
+}
+
+
+.empty p {
+
+    margin-top: 22px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+}
+
+
+/* ---------- arsip ---------- */
+
+.potm-archive {
+
+    padding-top: 0;
+
+    border-top: 0;
+
+}
+
+
+.year-group + .year-group {
+
+    margin-top: 70px;
+
+}
+
+
+.archive-head {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid var(--black);
+
+    font-family: var(--heading);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: .06em;
+
+}
+
+
+.archive-head span:last-child {
+
+    color: var(--gray);
+
+}
+
+
+.grid {
+
+    margin-top: 24px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.card {
+
+    position: relative;
+
+    min-height: 230px;
+
+    padding: 18px 18px 16px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border: 1px solid var(--light-gray);
+
+    transition: border-color .25s ease;
+
+}
+
+
+a.card:hover {
+
+    border-color: var(--blue);
+
+}
+
+
+a.card:focus-visible {
+
+    outline: 2px solid var(--blue);
+
+    outline-offset: 4px;
+
+}
+
+
+.card .m {
+
+    font-family: var(--heading);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: .12em;
+
+    color: var(--blue);
+
+}
+
+
+.card .n {
+
+    font-family: var(--heading);
+
+    font-size: 84px;
+
+    line-height: .8;
+
+    font-weight: 900;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1.5px var(--gray);
+
+}
+
+
+.card h3 {
+
+    font-family: var(--heading);
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    transition: color .25s ease;
+
+}
+
+
+a.card:hover h3 {
+
+    color: var(--blue);
+
+}
+
+
+.card p {
+
+    margin-top: 5px;
+
+    font-size: 9px;
+
+    letter-spacing: .08em;
+
+    color: var(--gray);
+
+}
+
+
+.card .wins {
+
+    position: absolute;
+
+    top: 16px;
+
+    right: 18px;
+
+    font-family: var(--heading);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: .06em;
+
+}
+
+
+.card.next {
+
+    border-style: dashed;
+
+}
+
+
+.card.next .n {
+
+    -webkit-text-stroke: 1.5px var(--light-gray);
+
+}
+
+
+.card.next h3 {
+
+    color: var(--gray);
+
+}
+
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 900px) {
+
+    .potm-page {
+
+        padding-top: 60px;
+
+    }
+
+
+    .winner {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 36px;
+
+    }
+
+
+    .photo {
+
+        aspect-ratio: .95;
+
+    }
+
+
+    .grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .card {
+
+        min-height: 200px;
+
+    }
+
+
+    .card .n {
+
+        font-size: 68px;
+
+    }
+
+
+    .year-group + .year-group {
+
+        margin-top: 50px;
+
+    }
+
+}
