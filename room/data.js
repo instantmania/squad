@@ -3,8 +3,8 @@
    Simpan sebagai: room/data.js
 
    Satu-satunya file yang perlu diedit untuk:
-   - pemain aktif      (players)
-   - ex-member         (legends)
+   - pemain aktif        (players)
+   - ex-member           (legends)
    - Player of the Month (potm)
 
    Dimuat oleh index.html DAN potm.html,
@@ -62,11 +62,11 @@ const players = {
 
         name: "NAUFAL",
 
-        role: "PRODUCTION",
+        role: "KANG NGEDIT",
 
-        position: "Production",
+        position: "Dimana Saja",
 
-        speciality: "Production / Coordination / Creative",
+        speciality: "Production / Coordination / Printing",
 
         joined: "2024",
 
@@ -81,11 +81,11 @@ const players = {
 
         name: "NICHO",
 
-        role: "MARKETING",
+        role: "ORANG IT",
 
-        position: "Marketing",
+        position: "Di Kanan",
 
-        speciality: "Marketing / Communication / Strategy",
+        speciality: "Mengelola hidup sehari-hari",
 
         joined: "2026",
 
@@ -100,13 +100,13 @@ const players = {
 
         name: "AANG",
 
-        role: "EDITOR",
+        role: "NGEDIT APA SAJA",
 
-        position: "Photo & Video Editor",
+        position: "Di Tempat Kosong",
 
-        speciality: "Editing / Color / Retouch",
+        speciality: "Edit Cerita Hidup / Edit Jadwal Kerja",
 
-        joined: "2021",
+        joined: "2022",
 
         image: "assets/aang.jpg"
 
@@ -121,7 +121,7 @@ const players = {
 
         role: "THE PRESIDENT",
 
-        position: "Finance & Support",
+        position: "Di Belakang Layar",
 
         speciality: "Finance / Administration / Venue",
 
@@ -137,60 +137,196 @@ const players = {
 /* =========================================
    LEGENDS (ex-member)
    Bentuk sama dengan `players`, ditambah:
-   left    : tahun keluar
+   left    : tahun keluar ("2025", "September, 2026",
+             atau "present" kalau masih ada)
    retired : true = badge RETIRED di kartu
 
-   !! Dua entri di bawah hanya CONTOH.
-   !! Ganti dengan data asli, atau kosongkan
-   !! jadi `const legends = {};` agar section
-   !! Legends tersembunyi.
-   Foto: assets/legends/<id>.jpg
+   Kunci (nathan, benaya, ...) = id yang dipakai
+   POTM dan link ?player=. Foto: assets/legends/<id>.jpg
 ========================================= */
 
 const legends = {
 
-    contoh1: {
+    nathan: {
 
         number: "11",
 
-        name: "NAMA EX-MEMBER 1",
+        name: "NATHAN",
 
-        role: "PHOTOGRAPHER",
+        role: "PROGRAMMER",
 
-        position: "Ganti posisi",
+        position: "PULANG KE KAMPUNG HALAMAN",
 
-        speciality: "Ganti skill / kontribusi",
+        speciality: "Segala Bisa Sih",
 
-        joined: "2023",
+        joined: "March, 2026",
+
+        left: "September, 2026",
+
+        retired: true,
+
+        image: "assets/legends/nathan.jpg"
+
+    },
+
+
+    benaya: {
+
+        number: "15",
+
+        name: "BENAYA",
+
+        role: "GRAPHIC DESIGNER",
+
+        position: "Tidak Tergantikan",
+
+        speciality: "Terlalu Spesial",
+
+        joined: "2024",
+
+        left: "2025",
+
+        retired: true,
+
+        image: "assets/legends/benaya.jpg"
+
+    },
+
+
+    sandi: {
+
+        number: "12",
+
+        name: "SANDI",
+
+        role: "PRODUCTION ENGINEERING",
+
+        position: "Naik Turun Tangga",
+
+        speciality: "Teknisi Mesin / Software",
+
+        joined: "2022",
+
+        left: "present",
+
+        retired: false,
+
+        image: "assets/legends/sandi.jpg"
+
+    },
+
+
+    dini: {
+
+        number: "22",
+
+        name: "DINI",
+
+        role: "EDITOR",
+
+        position: "Biasanya di Kiri",
+
+        speciality: "Kang Cerita",
+
+        joined: "2025",
+
+        left: "2025",
+
+        retired: true,
+
+        image: "assets/legends/dini.jpg"
+
+    },
+
+
+    adelle: {
+
+        number: "18",
+
+        name: "ADELLE",
+
+        role: "TALENT ARTIST",
+
+        position: "SOCIAL MEDIA",
+
+        speciality: "Model / Talent",
+
+        joined: "2024",
 
         left: "2024",
 
         retired: true,
 
-        image: "assets/legends/contoh1.jpg"
+        image: "assets/legends/adelle.jpg"
 
     },
 
 
-    contoh2: {
+    ihsan: {
 
-        number: "05",
+        number: "88",
 
-        name: "NAMA EX-MEMBER 2",
+        name: "IHSAN",
 
-        role: "VIDEOGRAPHER",
+        role: "WIBU",
 
-        position: "Ganti posisi",
+        position: "Dulu di Kanan",
 
-        speciality: "Ganti skill / kontribusi",
+        speciality: "Anime / おたく",
 
-        joined: "2023",
+        joined: "2024",
 
         left: "2025",
 
-        retired: false,
+        retired: true,
 
-        image: "assets/legends/contoh2.jpg"
+        image: "assets/legends/ihsan.jpg"
+
+    },
+
+
+    tyas: {
+
+        number: "03",
+
+        name: "TYAS",
+
+        role: "PENDAKI",
+
+        position: "Puncak Gunung",
+
+        speciality: "Mencintai Alam",
+
+        joined: "2022",
+
+        left: "2024",
+
+        retired: true,
+
+        image: "assets/legends/tyas.jpg"
+
+    },
+
+
+    salsa: {
+
+        number: "06",
+
+        name: "SALSA",
+
+        role: "EDITING",
+
+        position: "Ujung Kanan",
+
+        speciality: "Ngedit / Ngedit / Ngedit",
+
+        joined: "2022",
+
+        left: "2025",
+
+        retired: true,
+
+        image: "assets/legends/salsa.jpg"
 
     }
 
@@ -207,8 +343,8 @@ const people = { ...players, ...legends };
 
    month  : "TAHUN-BULAN" → "2026-01" … "2026-12"
    player : id di `players` / `legends` di atas
-            (mis. "fitra"). Kosong ("") = bulan itu
-            dilewati, tidak tampil di halaman.
+            (mis. "fitra", "nathan"). Kosong ("") =
+            bulan itu dilewati, tidak tampil.
    reason : (opsional) satu-dua kalimat alasan terpilih
    stats  : (opsional) hanya dipakai untuk pemenang
             terbaru: { projects, goals, assists }

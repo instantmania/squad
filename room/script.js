@@ -1,6 +1,10 @@
 /* =========================================
    INSTANT MANIA
    INTERACTION
+   Simpan sebagai: room/script.js
+
+   Data pemain / legends / POTM sekarang ada di
+   room/data.js (harus dimuat SEBELUM file ini).
 ========================================= */
 
 
@@ -37,323 +41,6 @@ revealElements.forEach((element) => {
     revealObserver.observe(element);
 
 });
-
-
-/* =========================================
-   PLAYER DATA (squad aktif)
-========================================= */
-
-const players = {
-
-    fitra: {
-
-        number: "69",
-
-        name: "FITRA",
-
-        role: "TUKANG NGABISIN CP",
-
-        position: "Ujung Kiri",
-
-        speciality: "Ngedit / Makan / Tidur",
-
-        joined: "2025",
-
-        image: "assets/fitra.jpg"
-
-    },
-
-
-    alip: {
-
-        number: "07",
-
-        name: "ALIP",
-
-        role: "KANG MOSING",
-
-        position: "Di Tengah",
-
-        speciality: "Photography / Music / Ngedit",
-
-        joined: "2022",
-
-        image: "assets/alip.jpg"
-
-    },
-
-
-    naufal: {
-
-        number: "09",
-
-        name: "NAUFAL",
-
-        role: "KANG NGEDIT",
-
-        position: "Dimana Saja",
-
-        speciality: "Production / Coordination / Printing",
-
-        joined: "2024",
-
-        image: "assets/naufal.jpg"
-
-    },
-
-
-    nicho: {
-
-        number: "08",
-
-        name: "NICHO",
-
-        role: "ORANG IT",
-
-        position: "Di Kanan",
-
-        speciality: "Mengelola hidup sehari-hari",
-
-        joined: "2026",
-
-        image: "assets/nicho.jpg"
-
-    },
-
-
-    aang: {
-
-        number: "17",
-
-        name: "AANG",
-
-        role: "NGEDIT APA SAJA",
-
-        position: "Di Tempat Kosong",
-
-        speciality: "Edit Cerita Hidup / Edit Jadwal Kerja",
-
-        joined: "2022",
-
-        image: "assets/aang.jpg"
-
-    },
-
-
-    bardan: {
-
-        number: "10",
-
-        name: "BARDAN",
-
-        role: "THE PRESIDENT",
-
-        position: "Di Belakang Layar",
-
-        speciality: "Finance / Administration / Venue",
-
-        joined: "2023",
-
-        image: "assets/bardan.jpg"
-
-    }
-
-};
-
-
-/* =========================================
-   LEGENDS DATA (ex-member)
-   Bentuk sama dengan `players`, ditambah:
-   left    : tahun keluar
-   retired : true = badge RETIRED di kartu
-
-   !! Dua entri di bawah hanya CONTOH.
-   !! Ganti dengan data asli (atau hapus
-   !! isinya jadi `const legends = {}` agar
-   !! section tersembunyi) sebelum publish.
-   Foto: assets/legends/<id>.jpg
-========================================= */
-
-const legends = {
-
-    contoh1: {
-
-        number: "11",
-
-        name: "NATHAN",
-
-        role: "PROGRAMMER",
-
-        position: "PULANG KE KAMPUNG HALAMAN",
-
-        speciality: "Segala Bisa Sih",
-
-        joined: "March, 2026",
-
-        left: "September, 2026",
-
-        retired: true,
-
-        image: "assets/legends/nathan.jpg"
-
-    },
-
-
-    contoh2: {
-
-        number: "15",
-
-        name: "BENAYA",
-
-        role: "GRAPHIC DESIGNER",
-
-        position: "Tidak Tergantikan",
-
-        speciality: "Terlalu Spesial",
-
-        joined: "2024",
-
-        left: "2025",
-
-        retired: true,
-
-        image: "assets/legends/benaya.jpg"
-
-    },
-
-   contoh3: {
-
-        number: "12",
-
-        name: "SANDI",
-
-        role: "PRODUCTION ENGINERING",
-
-        position: "Naik Turun Tangga",
-
-        speciality: "Teknisi Mesin / Software",
-
-        joined: "2022",
-
-        left: "present",
-
-        retired: false,
-
-        image: "assets/legends/sandi.jpg"
-
-    },
-    contoh4: {
-
-        number: "22",
-
-        name: "DINI",
-
-        role: "EDITOR",
-
-        position: "Biasanya di Kiri",
-
-        speciality: "Kang Cerita",
-
-        joined: "2025",
-
-        left: "2025",
-
-        retired: true,
-
-        image: "assets/legends/dini.jpg"
-
-       },
-    contoh5: {
-
-        number: "18",
-
-        name: "ADELLE",
-
-        role: "TALENT ARTIST",
-
-        position: "SOCIAL MEDIA",
-
-        speciality: "Model / Talent",
-
-        joined: "2024",
-
-        left: "2024",
-
-        retired: true,
-
-        image: "assets/legends/adelle.jpg"
-       
-       },
-   
-    contoh6: {
-
-        number: "88",
-
-        name: "IHSAN",
-
-        role: "WIBU",
-
-        position: "Dulu di Kanan",
-
-        speciality: "Anime / おたく",
-
-        joined: "2024",
-
-        left: "2025",
-
-        retired: true,
-
-        image: "assets/legends/ihsan.jpg"
-
-       },
-   
-    contoh7: {
-
-        number: "03",
-
-        name: "TYAS",
-
-        role: "PENDAKI",
-
-        position: "Puncak Gunung",
-
-        speciality: "Mencintai Alam",
-
-        joined: "2022",
-
-        left: "2024",
-
-        retired: true,
-
-        image: "assets/legends/tyas.jpg"
-       },
-   
-    contoh8: {
-
-        number: "06",
-
-        name: "SALSA",
-
-        role: "EDITING",
-
-        position: "Ujung Kanan",
-
-        speciality: "Ngedit / Ngedit / Ngedit",
-
-        joined: "2022",
-
-        left: "2025",
-
-        retired: true,
-
-        image: "assets/legends/salsa.jpg"
-    }
-
-};
-
-
-/* gabungan: modal bisa membuka pemain aktif maupun legend */
-const people = { ...players, ...legends };
 
 
 /* =========================================
@@ -515,6 +202,39 @@ const escapeHTML = (value) =>
     }[char]));
 
 
+const MONTH_NAMES = [
+    "january", "february", "march", "april", "may", "june",
+    "july", "august", "september", "october", "november", "december"
+];
+
+/* ambil tahun 4 digit dari teks ("March, 2026" → "2026") */
+const yearOf = (value) => {
+
+    const match = String(value).match(/\d{4}/);
+
+    return match ? match[0] : null;
+
+};
+
+/* angka pengurut: tahun*100 + bulan; tanpa tahun ("present") = paling atas */
+const leftOrder = (value) => {
+
+    const text = String(value).toLowerCase();
+
+    const year = yearOf(text);
+
+    if (!year) return Infinity;
+
+    return Number(year) * 100 + (MONTH_NAMES.findIndex((m) => text.includes(m)) + 1);
+
+};
+
+/* teks singkat untuk kartu: "2022–PRESENT", "2026–2026" */
+const shortYears = (p) =>
+    (yearOf(p.joined) || p.joined) + "–" +
+    (yearOf(p.left) || String(p.left).toUpperCase());
+
+
 function renderLegends() {
 
     const section = document.getElementById("legends");
@@ -534,10 +254,11 @@ function renderLegends() {
     if (navLink) navLink.hidden = false;
 
 
-    /* yang paling baru keluar tampil duluan */
+    /* urut: "present" (masih ada) dulu, lalu yang paling baru keluar.
+       `left` boleh "2025", "September, 2026", atau "present". */
     entries.sort(
         (a, b) =>
-            Number(b[1].left) - Number(a[1].left) ||
+            leftOrder(b[1].left) - leftOrder(a[1].left) ||
             a[1].name.localeCompare(b[1].name)
     );
 
@@ -584,7 +305,7 @@ function renderLegends() {
 
                     <span>
                         ${escapeHTML(p.role)} ·
-                        ${escapeHTML(p.joined)}–${escapeHTML(p.left)}
+                        ${escapeHTML(shortYears(p))}
                     </span>
 
                 </div>
@@ -608,6 +329,22 @@ function renderLegends() {
 
 
 renderLegends();
+
+
+/* =========================================
+   BUKA POPUP LEWAT LINK
+   mis. index.html?player=fitra
+   (dipakai tombol VIEW PROFILE di halaman POTM)
+========================================= */
+
+const requestedPlayer =
+    new URLSearchParams(location.search).get("player");
+
+if (requestedPlayer && people[requestedPlayer]) {
+
+    openPlayer(requestedPlayer);
+
+}
 
 
 /* =========================================
