@@ -187,7 +187,7 @@
                     ? `<div class="stats">${stats}</div>`
                     : ""}
 
-                <a class="link" href="potm.html?player=${encodeURIComponent(entry.player)}">
+                <a class="link" href="index.html?player=${encodeURIComponent(entry.player)}">
                     VIEW PROFILE ↗
                 </a>
 
