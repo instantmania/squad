@@ -373,10 +373,10 @@ const potm = [
 
     { month: "2026-06", player: "", reason: "" },
 
-    { month: "2026-07", player: "", reason: "" },
+    { month: "2026-07", player: "alip", reason: "" },
 
-    { month: "2026-08", player: "", reason: "" },
+    { month: "2026-08", player: "naufal", reason: "" },
 
-    { month: "2026-09", player: "", reason: "" }
+    { month: "2026-09", player: "fitra", reason: "" }
 
 ];
