@@ -43,10 +43,8 @@
 <a href="index.html#formation">FORMATION</a>
 <a href="index.html#matchday">MATCHDAY</a>
 <a href="potm.html" class="active" aria-current="page">POTM</a>
-<a href="index.html#legends">LEGENDS</a>
 <a href="index.html#story">THE STORY</a>
 </nav>
-
 
 <div class="header-right">
 <span class="language">ID</span>
@@ -143,8 +141,87 @@ CREATIVE / PHOTO / EXPERIENCE
 </footer>
 
 
+<!-- =========================================
+    PLAYER MODAL (sama dengan di index.html)
+    Ditutup dengan × / Esc / klik area gelap,
+    halaman tetap di POTM.
+========================================= -->
+
+<div class="player-modal" id="playerModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+
+<div class="modal-inner">
+
+<button type="button" class="modal-close" id="modalClose" aria-label="Tutup">
+×
+</button>
+
+
+<div class="modal-image">
+<img id="modalImage" alt="">
+</div>
+
+
+<div class="modal-content">
+
+<span class="modal-number" id="modalNumber">
+69
+</span>
+
+<h2 id="modalName">
+FITRA
+</h2>
+
+<span class="modal-role" id="modalRole">
+KANG NGABISIN CP
+</span>
+
+
+<div class="modal-divider"></div>
+
+
+<div class="modal-row">
+
+<span>POSITION</span>
+
+<strong id="modalPosition">
+Ujung Kiri
+</strong>
+
+</div>
+
+
+<div class="modal-row">
+
+<span>SPECIALITY</span>
+
+<strong id="modalSpeciality">
+Ngedit / Makan / Tidur
+</strong>
+
+</div>
+
+
+<div class="modal-row">
+
+<span id="modalJoinedLabel">JOINED</span>
+
+<strong id="modalJoined">
+2025
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- urutan penting: data → potm → script -->
 <script src="room/data.js"></script>
 <script src="room/potm.js"></script>
+<script src="room/script.js"></script>
 
 </body>
 </html>
