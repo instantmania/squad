@@ -402,6 +402,22 @@ nav.addEventListener("click", (event) => {
 });
 
 
+/* klik area gelap (latar) atau logo = tutup menu */
+const siteHeader = document.getElementById("header");
+
+siteHeader.addEventListener("click", (event) => {
+
+    if (!nav.classList.contains("mobile-open")) return;
+
+    if (event.target === siteHeader || event.target.closest(".brand")) {
+
+        setMenu(false);
+
+    }
+
+});
+
+
 /* Esc menutup menu */
 document.addEventListener("keydown", (event) => {
 
