@@ -1,0 +1,310 @@
+/* =========================================
+   LEGENDS + PERBAIKAN KECIL
+   File terpisah: simpan sebagai room/legends.css
+   (sudah di-link di index.html setelah style.css)
+========================================= */
+
+
+/* ---------- kartu legends ---------- */
+
+/* foto hitam-putih; berwarna sebagian saat hover */
+.legend-card .player-image {
+
+    position: relative;
+
+}
+
+
+.legend-card .player-image img {
+
+    filter: grayscale(1);
+
+}
+
+
+.legend-card:hover .player-image img {
+
+    filter: grayscale(.25);
+
+}
+
+
+/* nomor abu-abu: sudah bukan pemain aktif */
+.legend-card .player-number {
+
+    color: var(--gray);
+
+}
+
+
+/* badge nomor dipensiunkan */
+.legend-badge {
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 10px;
+
+    padding: 4px 8px;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-family: var(--heading);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .1em;
+
+}
+
+
+/* ---------- fokus keyboard ---------- */
+
+.player-card:focus-visible,
+.formation-player:focus-visible {
+
+    outline: 2px solid var(--blue);
+
+    outline-offset: 4px;
+
+}
+
+
+/* =========================================
+   MENU: ikon 3 garis → jendela menu
+   Dipakai semua halaman (index, potm, artikel).
+   Tombol tetap memakai 2 <span> di HTML;
+   garis ke-3 digambar lewat ::after.
+========================================= */
+
+.header {
+
+    --header-h: 72px;
+
+}
+
+
+/* area ketuk lebih besar + garis ke-3 */
+.menu-button {
+
+    width: 26px;
+
+    height: 24px;
+
+}
+
+
+.menu-button::after {
+
+    content: "";
+
+    display: block;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--black);
+
+}
+
+
+.menu-button span,
+.menu-button::after {
+
+    transition:
+        transform .3s ease,
+        opacity .2s ease;
+
+}
+
+
+/* saat menu terbuka: 3 garis → tanda × */
+.menu-button[aria-expanded="true"] span:nth-child(1) {
+
+    transform: translateY(6px) rotate(45deg);
+
+}
+
+
+.menu-button[aria-expanded="true"] span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+
+.menu-button[aria-expanded="true"]::after {
+
+    transform: translateY(-6px) rotate(-45deg);
+
+}
+
+
+.menu-button:focus-visible {
+
+    outline: 2px solid var(--blue);
+
+    outline-offset: 6px;
+
+}
+
+
+/* jendela menu: .nav yang sama, tampil layar penuh di bawah header */
+.nav.mobile-open {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    position: fixed;
+
+    top: var(--header-h);
+
+    left: 0;
+
+    right: 0;
+
+    transform: none;
+
+    height: calc(100vh - var(--header-h));
+
+    height: calc(100dvh - var(--header-h));
+
+    padding:
+        12px 4vw
+        calc(24px + env(safe-area-inset-bottom, 0px));
+
+    overflow-y: auto;
+
+    background: var(--off-white);
+
+    animation: menuIn .28s ease;
+
+}
+
+
+.nav.mobile-open a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--light-gray);
+
+    font-size: clamp(40px, 11vw, 68px);
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: -.01em;
+
+}
+
+
+/* display:flex di atas akan menimpa atribut hidden, jadi ditegaskan lagi */
+.nav.mobile-open a[hidden] {
+
+    display: none;
+
+}
+
+
+.nav.mobile-open a::after {
+
+    content: "→";
+
+    color: var(--gray);
+
+    font-family: var(--body);
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    transition:
+        transform .25s ease,
+        color .25s ease;
+
+}
+
+
+.nav.mobile-open a:hover::after,
+.nav.mobile-open a.active::after {
+
+    color: var(--blue);
+
+    transform: translateX(4px);
+
+}
+
+
+/* halaman tidak ikut bergulir saat menu terbuka */
+body.menu-open {
+
+    overflow: hidden;
+
+}
+
+
+@keyframes menuIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: none;
+
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .header {
+
+        --header-h: 60px;
+
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nav.mobile-open {
+
+        animation: none;
+
+    }
+
+    .menu-button span,
+    .menu-button::after,
+    .nav.mobile-open a::after {
+
+        transition: none;
+
+    }
+
+}

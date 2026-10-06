@@ -9,6 +9,24 @@
 
 
 /* =========================================
+   PENGECEKAN: data.js harus sudah dimuat
+   Kalau tulisan ini muncul di Console (F12),
+   berarti index.html belum memuat room/data.js
+   atau file-nya belum terupload.
+========================================= */
+
+if (typeof people === "undefined" || typeof legends === "undefined") {
+
+    throw new Error(
+        'room/data.js belum dimuat. Tambahkan <script src="room/data.js"></script> ' +
+        'SEBELUM <script src="room/script.js"></script> di index.html, ' +
+        'dan pastikan file room/data.js ada.'
+    );
+
+}
+
+
+/* =========================================
    SCROLL REVEAL
 ========================================= */
 
@@ -348,7 +366,7 @@ if (requestedPlayer && people[requestedPlayer]) {
 
 
 /* =========================================
-   MOBILE MENU
+   MENU (ikon 3 garis → jendela menu)
 ========================================= */
 
 const menuButton = document.getElementById("menuButton");
@@ -356,11 +374,22 @@ const menuButton = document.getElementById("menuButton");
 const nav = document.querySelector(".nav");
 
 
-menuButton.addEventListener("click", () => {
+function setMenu(open) {
 
-    const open = nav.classList.toggle("mobile-open");
+    nav.classList.toggle("mobile-open", open);
+
+    document.body.classList.toggle("menu-open", open);
 
     menuButton.setAttribute("aria-expanded", String(open));
+
+    menuButton.setAttribute("aria-label", open ? "Tutup menu" : "Menu");
+
+}
+
+
+menuButton.addEventListener("click", () => {
+
+    setMenu(!nav.classList.contains("mobile-open"));
 
 });
 
@@ -368,11 +397,20 @@ menuButton.addEventListener("click", () => {
 /* menu tertutup sendiri setelah memilih link */
 nav.addEventListener("click", (event) => {
 
-    if (event.target.closest("a")) {
+    if (event.target.closest("a")) setMenu(false);
 
-        nav.classList.remove("mobile-open");
+});
 
-        menuButton.setAttribute("aria-expanded", "false");
+
+/* Esc menutup menu */
+document.addEventListener("keydown", (event) => {
+
+    if (
+        event.key === "Escape" &&
+        nav.classList.contains("mobile-open")
+    ) {
+
+        setMenu(false);
 
     }
 
