@@ -361,22 +361,22 @@ const people = { ...players, ...legends };
 
 const potm = [
 
-    { month: "2026-01", player: "", reason: "" },
+    { month: "2026-01", player: "fitra", reason: "" },
 
-    { month: "2026-02", player: "", reason: "" },
+    { month: "2026-02", player: "naufal", reason: "" },
 
-    { month: "2026-03", player: "", reason: "" },
+    { month: "2026-03", player: "naufal", reason: "" },
 
-    { month: "2026-04", player: "", reason: "" },
+    { month: "2026-04", player: "naufal", reason: "" },
 
-    { month: "2026-05", player: "", reason: "" },
+    { month: "2026-05", player: "naufal", reason: "" },
 
-    { month: "2026-06", player: "", reason: "" },
+    { month: "2026-06", player: "naufal", reason: "" },
 
-    { month: "2026-07", player: "alip", reason: "" },
+    { month: "2026-07", player: "fitra", reason: "" },
 
-    { month: "2026-08", player: "naufal", reason: "" },
+    { month: "2026-08", player: "nathan", reason: "" },
 
-    { month: "2026-09", player: "fitra", reason: "" }
+    { month: "2026-09", player: "naufal", reason: "" }
 
 ];
