@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Benaya Reunion — Instant Mania</title>
+<meta name="description" content="Matchday: Benaya Reunion — Dikichi, Bandung. Instant Mania.">
+
+<!-- preview saat link dibagikan -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nathan's Farewell — Instant Mania">
+<meta property="og:description" content="Matchday: Nathan's Farewell — Submarine, Bandung.">
+<meta property="og:url" content="https://instantmania.github.io/squad/matchday/nathans-farewell.html">
+<meta property="og:image" content="https://instantmania.github.io/squad/assets/project.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111'/><text x='50' y='70' font-size='58' font-weight='900' text-anchor='middle' fill='white' font-family='sans-serif'>IM</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../room/style.css">
+<link rel="stylesheet" href="../room/legends.css">
+<link rel="stylesheet" href="../room/matchday.css">
+</head>
+
+<body>
+
+<!-- =========================================
+    HEADER (sama dengan halaman utama)
+========================================= -->
+
+<header class="header" id="header">
+
+<a href="../index.html#home" class="brand">
+<span class="brand-mark">IM</span>
+<span class="brand-name">INSTANT MANIA</span>
+</a>
+
+<nav class="nav">
+<a href="../index.html#squad">SQUAD</a>
+<a href="../index.html#formation">FORMATION</a>
+<a href="../index.html#matchday">MATCHDAY</a>
+<a href="../index.html#legends">LEGENDS</a>
+<a href="../index.html#story">THE STORY</a>
+</nav>
+
+<div class="header-right">
+<span class="language">ID</span>
+
+<button class="menu-button" id="menuButton" aria-label="Menu" aria-expanded="false">
+<span></span>
+<span></span>
+</button>
+</div>
+
+</header>
+
+
+<main class="article">
+
+<a href="../index.html#matchday" class="article-back">
+← BACK TO MATCHDAY
+</a>
+
+
+<!-- =========================================
+    JUDUL
+========================================= -->
+
+<div class="article-head">
+
+<div class="article-kicker">
+<span>MATCHDAY · 07 SEP 2026</span>
+<span class="article-status">DONE</span>
+</div>
+
+<h1>
+BENAYA<br>
+REUNION
+</h1>
+
+<p class="article-tagline">
+Pertemuan kecil, makna yang besar
+</p>
+
+</div>
+
+
+<figure class="article-cover">
+<img src="../assets/benayareunion.jpg" alt="Benaya Reunion">
+</figure>
+
+
+<!-- =========================================
+    ISI
+========================================= -->
+
+<div class="article-layout">
+
+<dl class="article-facts">
+
+<div>
+<dt>DATE</dt>
+<dd>07 September 2026</dd>
+</div>
+
+<div>
+<dt>VENUE</dt>
+<dd>Dikichi, Bandung</dd>
+</div>
+
+<div>
+<dt>TYPE</dt>
+<dd>Farewell</dd>
+</div>
+
+<div>
+<dt>LINE-UP</dt>
+<dd>ALIP / NAUFAL / FITRA / BENAYA / NATHAN</dd>
+</div>
+
+</dl>
+
+
+<div class="article-text">
+
+<p class="article-lead">
+Ada orang-orang yang meskipun sudah lama pergi, rasanya tidak pernah benar-benar jauh. Begitu bertemu kembali, obrolan dan tawa terasa seperti melanjutkan percakapan yang sempat tertunda. Begitulah rasanya ketika akhirnya kita kembali bertemu dengan Benaya, atau yang selalu kita panggil, Mas Ben.
+
+<p>
+Bandung mungkin sudah bukan tempat yang setiap hari Mas Ben tinggali, tapi ternyata kota ini masih menyimpan begitu banyak cerita tentang kita. Tempat-tempat, kebiasaan, candaan, dan wajah-wajah yang pernah menjadi bagian dari hari-hari bersama, semuanya seakan kembali hadir dalam satu pertemuan sederhana.
+
+<p>
+Kini Mas Ben sudah menetap di Bali, menjalani cerita dan kehidupan yang baru. Jarak mungkin membuat pertemuan menjadi lebih jarang, tetapi ternyata tidak pernah cukup jauh untuk mengubah rasa dekat yang pernah tumbuh dari kebersamaan.
+</p>
+
+<blockquote class="article-quote">
+Reuni kecil ini mungkin hanya berlangsung beberapa jam, dengan obrolan ringan, tawa, dan cerita tentang kehidupan masing-masing. Namun justru dari hal-hal sederhana seperti inilah kita kembali diingatkan bahwa ada pertemanan yang tidak membutuhkan sering bertemu untuk tetap terasa berarti.
+</blockquote>
+
+<p>
+Selamat datang kembali di Bandung, Mas Ben. Semoga setiap langkah di Bali membawa banyak cerita baik, dan ketika suatu hari nanti kembali berkunjung ke kota ini, semoga selalu ada tempat, cerita, dan orang-orang yang siap menyambutmu seperti dulu, dengan hangat, dengan tawa, dan dengan rasa bahwa kita tidak pernah benar-benar berpisah.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================================
+    GALERI
+    Foto di assets/matchday/benayareunion/
+    Foto yang belum ada otomatis hilang.
+========================================= -->
+
+<div class="article-gallery">
+
+<figure>
+<img src="../assets/matchday/benayareunion/01.jpg" alt="Benaya Reunion — foto 1" loading="lazy" onerror="this.closest('figure').remove()">
+</figure>
+
+<figure>
+<img src="../assets/matchday/benayareunion/02.jpg" alt="Benaya Reunion — foto 2" loading="lazy" onerror="this.closest('figure').remove()">
+</figure>
+
+<figure>
+<img src="../assets/matchday/benayareunion/03.jpg" alt="Benaya Reunion — foto 3" loading="lazy" onerror="this.closest('figure').remove()">
+</figure>
+
+</div>
+
+
+<div class="article-footer-nav">
+<a href="../index.html#matchday" class="article-back">
+← ALL MATCHDAYS
+</a>
+</div>
+
+</main>
+
+
+<!-- =========================================
+    FOOTER
+========================================= -->
+
+<footer class="footer">
+
+<div class="footer-top">
+
+<div class="footer-brand">
+<span class="brand-mark">IM</span>
+<strong>INSTANT MANIA</strong>
+</div>
+
+<div class="footer-tagline">
+CREATIVE / PHOTO / EXPERIENCE
+</div>
+
+<div class="footer-social">
+
+<a href="https://www.instagram.com/instantmania_" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="display:block">
+<rect x="3" y="3" width="18" height="18" rx="5"/>
+<circle cx="12" cy="12" r="4"/>
+<circle cx="17.4" cy="6.6" r=".6" fill="currentColor"/>
+</svg>
+</a>
+
+<a href="https://www.youtube.com/@instantmania_" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="display:block">
+<rect x="2" y="5" width="20" height="14" rx="4.5"/>
+<path d="M10 9v6l5.2-3z" fill="currentColor"/>
+</svg>
+</a>
+
+<a href="https://www.tiktok.com/@USERNAME" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="display:block">
+<path d="M14.5 3v10.6a3.9 3.9 0 1 1-3.9-3.9"/>
+<path d="M14.5 3c.3 2.7 2.1 4.6 4.9 4.8"/>
+</svg>
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<span>© 2026 INSTANT MANIA</span>
+<span>ONE TEAM. MANY ROLES. ONE MANIA.</span>
+</div>
+
+</footer>
+
+
+<script src="../room/article.js"></script>
+
+</body>
+</html>
