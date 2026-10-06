@@ -533,14 +533,14 @@
 }
 
 
-a.card:hover {
+.card[data-player]:hover {
 
     border-color: var(--blue);
 
 }
 
 
-a.card:focus-visible {
+.card[data-player]:focus-visible {
 
     outline: 2px solid var(--blue);
 
@@ -594,7 +594,7 @@ a.card:focus-visible {
 }
 
 
-a.card:hover h3 {
+.card[data-player]:hover h3 {
 
     color: var(--blue);
 
@@ -650,6 +650,42 @@ a.card:hover h3 {
 .card.next h3 {
 
     color: var(--gray);
+
+}
+
+
+.card[data-player] {
+
+    cursor: pointer;
+
+}
+
+
+/* tombol VIEW PROFILE (dulu link) */
+button.link {
+
+    align-self: flex-start;
+
+    padding: 0;
+
+    border: 0;
+
+    background: none;
+
+    color: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+
+button.link:focus-visible {
+
+    outline: 2px solid var(--blue);
+
+    outline-offset: 4px;
 
 }
 

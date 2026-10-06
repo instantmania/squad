@@ -187,9 +187,9 @@
                     ? `<div class="stats">${stats}</div>`
                     : ""}
 
-                <a class="link" href="index.html?player=${encodeURIComponent(entry.player)}">
+                <button type="button" class="link" data-player="${esc(entry.player)}">
                     VIEW PROFILE ↗
-                </a>
+                </button>
 
             </div>
 
@@ -227,7 +227,7 @@
 
         return `
 
-            <a class="card" href="index.html?player=${encodeURIComponent(entry.player)}">
+            <article class="card" data-player="${esc(entry.player)}" tabindex="0" role="button">
 
                 ${count > 1
                     ? `<span class="wins">×${count}</span>`
@@ -242,7 +242,7 @@
                     <p>${esc(p.role)}</p>
                 </div>
 
-            </a>
+            </article>
 
         `;
 
@@ -350,30 +350,6 @@
     }
 
 
-    /* ---------- menu mobile ---------- */
-
-    const menuButton = document.getElementById("menuButton");
-
-    const nav = document.querySelector(".nav");
-
-    menuButton.addEventListener("click", () => {
-
-        const open = nav.classList.toggle("mobile-open");
-
-        menuButton.setAttribute("aria-expanded", String(open));
-
-    });
-
-    nav.addEventListener("click", (event) => {
-
-        if (event.target.closest("a")) {
-
-            nav.classList.remove("mobile-open");
-
-            menuButton.setAttribute("aria-expanded", "false");
-
-        }
-
-    });
+    /* menu mobile & popup pemain ditangani room/script.js */
 
 })();
