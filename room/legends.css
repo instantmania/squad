@@ -76,7 +76,7 @@
 
 
 /* =========================================
-   MENU: ikon 3 garis → jendela menu
+   MENU: ikon 3 garis → laci (drawer) dari kanan
    Dipakai semua halaman (index, potm, artikel).
    Tombol tetap memakai 2 <span> di HTML;
    garis ke-3 digambar lewat ::after.
@@ -120,8 +120,7 @@
 
     transition:
         transform .3s ease,
-        opacity .2s ease,
-        background .2s ease;
+        opacity .2s ease;
 
 }
 
@@ -159,7 +158,7 @@
 
 /* ---------- latar gelap ----------
    Digambar sebagai ::before dari .header, memenuhi seluruh layar.
-   blur header dimatikan saat terbuka (backdrop-filter membuat
+   Blur header dimatikan saat terbuka (backdrop-filter membuat
    elemen fixed di dalamnya ikut "terkurung" di header). */
 
 body.menu-open {
@@ -188,14 +187,14 @@ body.menu-open .header::before {
 
     z-index: -1;
 
-    background: rgba(0,0,0,.7);
+    background: rgba(0,0,0,.6);
 
     animation: menuFade .25s ease;
 
 }
 
 
-/* isi header ikut terang di atas latar gelap */
+/* logo di sisi kiri (di atas latar gelap) jadi putih */
 body.menu-open .brand,
 body.menu-open .language {
 
@@ -204,15 +203,17 @@ body.menu-open .language {
 }
 
 
-body.menu-open .menu-button span,
-body.menu-open .menu-button::after {
+/* tombol × tetap di atas laci; garisnya gelap karena di atas panel terang */
+body.menu-open .menu-button {
 
-    background: var(--white);
+    position: relative;
+
+    z-index: 2;
 
 }
 
 
-/* ---------- jendela menu (setengah layar, di tengah) ---------- */
+/* ---------- laci menu (muncul dari kanan) ---------- */
 
 .nav.mobile-open {
 
@@ -224,45 +225,49 @@ body.menu-open .menu-button::after {
 
     position: fixed;
 
-    top: 50%;
+    top: 0;
 
-    left: 50%;
-
-    right: auto;
+    right: 0;
 
     bottom: auto;
 
-    transform: translate(-50%, -50%);
+    left: auto;
 
-    width: min(88vw, 440px);
+    transform: none;
 
-    max-height: 80vh;
+    width: min(64vw, 380px);
 
-    max-height: 80dvh;
+    height: 100vh;
+
+    height: 100dvh;
 
     overflow-y: auto;
 
-    padding: 22px 24px 8px;
+    padding: 0 24px calc(24px + env(safe-area-inset-bottom, 0px));
 
     background: var(--off-white);
 
-    box-shadow: 0 24px 60px rgba(0,0,0,.4);
+    box-shadow: -12px 0 40px rgba(0,0,0,.25);
 
     animation: menuIn .28s ease;
 
 }
 
 
-/* label kecil di atas daftar, senada dengan "UPCOMING FIXTURES" */
+/* bar atas laci: sejajar dengan tombol ×, label "MENU" di kiri */
 .nav.mobile-open::before {
 
     content: "MENU";
 
-    display: block;
+    display: flex;
 
-    padding-bottom: 12px;
+    align-items: center;
 
-    border-bottom: 1px solid var(--black);
+    flex: none;
+
+    height: var(--header-h);
+
+    border-bottom: 1px solid var(--light-gray);
 
     font-family: var(--heading);
 
@@ -285,11 +290,11 @@ body.menu-open .menu-button::after {
 
     justify-content: space-between;
 
-    padding: 13px 0;
+    padding: 16px 0;
 
     border-bottom: 1px solid var(--light-gray);
 
-    font-size: clamp(30px, 8vw, 40px);
+    font-size: clamp(28px, 7.5vw, 38px);
 
     font-weight: 900;
 
@@ -348,17 +353,13 @@ body.menu-open .menu-button::after {
 
     from {
 
-        opacity: 0;
-
-        transform: translate(-50%, -47%);
+        transform: translateX(100%);
 
     }
 
     to {
 
-        opacity: 1;
-
-        transform: translate(-50%, -50%);
+        transform: none;
 
     }
 
