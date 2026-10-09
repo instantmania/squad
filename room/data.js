@@ -387,7 +387,7 @@ const potm = [
 
     { month: "2026-07", player: "fitra", reason: "" },
 
-    { month: "2026-08", player: "nathan", reason: "" },
+    { month: "2026-08", player: "nathan", reason: "Banyak menggendong sendirian di bulan Agustus" },
 
     { month: "2026-09", player: "naufal", reason: "" }
 
