@@ -404,3 +404,575 @@ body.menu-open .menu-button {
     }
 
 }
+
+/* =========================================
+   LEGENDS — CAROUSEL (langkah 1)
+   Tempel di PALING BAWAH room/legends.css
+   Nama class diawali "lc-" supaya tidak
+   bentrok dengan class lain di situs.
+   (Aturan global dari contoh — * dan body —
+   sengaja TIDAK dipakai.)
+========================================= */
+
+.legend-carousel {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    height: 450px;
+
+    margin: 0 auto;
+
+    perspective: 1000px;
+
+    overflow: hidden;
+
+}
+
+
+.legend-carousel:focus-visible {
+
+    outline: 2px solid var(--blue);
+
+    outline-offset: 4px;
+
+}
+
+
+.lc-track {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transform-style: preserve-3d;
+
+}
+
+
+/* ---------- kartu ---------- */
+
+.lc-card {
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 380px;
+
+    background: var(--black);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,.15);
+
+    transition:
+        transform .8s cubic-bezier(.25,.46,.45,.94),
+        opacity .8s cubic-bezier(.25,.46,.45,.94);
+
+}
+
+
+.lc-card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+
+    transition: filter .8s cubic-bezier(.25,.46,.45,.94);
+
+}
+
+
+/* gradasi gelap di bawah foto supaya nomor terbaca */
+.lc-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.6),
+        rgba(0,0,0,0) 55%
+    );
+
+    pointer-events: none;
+
+}
+
+
+.lc-number {
+
+    position: absolute;
+
+    z-index: 1;
+
+    left: 14px;
+
+    bottom: 6px;
+
+    font-family: var(--heading);
+
+    font-size: 84px;
+
+    line-height: .85;
+
+    font-weight: 900;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1.5px var(--white);
+
+}
+
+
+.lc-badge {
+
+    position: absolute;
+
+    z-index: 1;
+
+    top: 10px;
+
+    left: 10px;
+
+    padding: 4px 8px;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-family: var(--heading);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .1em;
+
+}
+
+
+/* posisi kartu (kelas diatur oleh JS) */
+
+.lc-card.center {
+
+    z-index: 10;
+
+    transform: scale(1.1) translateZ(0);
+
+}
+
+
+.lc-card.center img {
+
+    filter: none;
+
+}
+
+
+.lc-card.left-2 {
+
+    z-index: 1;
+
+    transform: translateX(-400px) scale(.8) translateZ(-300px);
+
+    opacity: .7;
+
+}
+
+
+.lc-card.left-1 {
+
+    z-index: 5;
+
+    transform: translateX(-200px) scale(.9) translateZ(-100px);
+
+    opacity: .9;
+
+}
+
+
+.lc-card.right-1 {
+
+    z-index: 5;
+
+    transform: translateX(200px) scale(.9) translateZ(-100px);
+
+    opacity: .9;
+
+}
+
+
+.lc-card.right-2 {
+
+    z-index: 1;
+
+    transform: translateX(400px) scale(.8) translateZ(-300px);
+
+    opacity: .7;
+
+}
+
+
+.lc-card.hidden {
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* ---------- tombol panah ---------- */
+
+.lc-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 20;
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--black);
+
+    background: var(--off-white);
+
+    color: var(--black);
+
+    font-family: var(--body);
+
+    font-size: 26px;
+
+    line-height: 1;
+
+    padding-bottom: 3px;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+
+}
+
+
+.lc-arrow:hover,
+.lc-arrow:focus-visible {
+
+    background: var(--blue);
+
+    border-color: var(--blue);
+
+    color: var(--white);
+
+    outline: none;
+
+}
+
+
+.lc-arrow.left {
+
+    left: 20px;
+
+}
+
+
+.lc-arrow.right {
+
+    right: 20px;
+
+}
+
+
+/* ---------- info di bawah carousel ---------- */
+
+.lc-info {
+
+    margin-top: 36px;
+
+    text-align: center;
+
+    transition: opacity .25s ease;
+
+}
+
+
+.lc-info.is-changing {
+
+    opacity: 0;
+
+}
+
+
+.lc-name {
+
+    font-family: var(--heading);
+
+    font-size: clamp(48px, 8vw, 90px);
+
+    line-height: .85;
+
+    font-weight: 900;
+
+    letter-spacing: -.02em;
+
+}
+
+
+.lc-meta {
+
+    margin-top: 16px;
+
+    font-family: var(--heading);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: .14em;
+
+    color: var(--blue);
+
+}
+
+
+.lc-note {
+
+    margin-top: 8px;
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+}
+
+
+.lc-open {
+
+    margin-top: 20px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: none;
+
+    color: var(--black);
+
+    font-family: var(--heading);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: .04em;
+
+    cursor: pointer;
+
+    transition: color .2s ease;
+
+}
+
+
+.lc-open:hover,
+.lc-open:focus-visible {
+
+    color: var(--blue);
+
+    outline: none;
+
+}
+
+
+/* ---------- titik navigasi ---------- */
+
+.lc-dots {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 34px;
+
+}
+
+
+.lc-dot {
+
+    width: 10px;
+
+    height: 10px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: var(--light-gray);
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        transform .3s ease;
+
+}
+
+
+.lc-dot.active {
+
+    background: var(--blue);
+
+    transform: scale(1.25);
+
+}
+
+
+.lc-dot:focus-visible {
+
+    outline: 2px solid var(--blue);
+
+    outline-offset: 3px;
+
+}
+
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 900px) {
+
+    .legend-carousel {
+
+        height: 370px;
+
+    }
+
+
+    .lc-card {
+
+        width: 200px;
+
+        height: 280px;
+
+    }
+
+
+    .lc-card.left-2 {
+
+        transform: translateX(-250px) scale(.8) translateZ(-300px);
+
+    }
+
+
+    .lc-card.left-1 {
+
+        transform: translateX(-120px) scale(.9) translateZ(-100px);
+
+    }
+
+
+    .lc-card.right-1 {
+
+        transform: translateX(120px) scale(.9) translateZ(-100px);
+
+    }
+
+
+    .lc-card.right-2 {
+
+        transform: translateX(250px) scale(.8) translateZ(-300px);
+
+    }
+
+
+    .lc-number {
+
+        font-size: 56px;
+
+    }
+
+
+    .lc-arrow {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .lc-arrow.left {
+
+        left: 6px;
+
+    }
+
+
+    .lc-arrow.right {
+
+        right: 6px;
+
+    }
+
+
+    .lc-info {
+
+        margin-top: 28px;
+
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .lc-card,
+    .lc-card img,
+    .lc-info,
+    .lc-dot,
+    .lc-arrow {
+
+        transition: none;
+
+    }
+
+}
