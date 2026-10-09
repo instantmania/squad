@@ -606,7 +606,7 @@ function renderLegendCarousel() {
 
 }
 
-renderLegends();
+renderLegendCarousel();
 
 
 /* =========================================
