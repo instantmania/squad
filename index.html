@@ -583,7 +583,42 @@ Retired numbers stay retired.
 </div>
 
 
-<div class="squad-grid" id="legendsList"></div>
+<!-- =========================================
+    LEGENDS — CAROUSEL (langkah 2)
+    Di section Legends, HAPUS baris ini:
+
+        <div class="squad-grid" id="legendsList"></div>
+
+    lalu tempel blok di bawah di tempat yang sama
+    (tetap di dalam <section ... id="legends">).
+    Judul "THE LEGENDS" / section-heading jangan diubah.
+========================================= -->
+
+<div class="legend-carousel" id="legendCarousel" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Legends">
+
+<button type="button" class="lc-arrow left" aria-label="Legend sebelumnya">‹</button>
+
+<div class="lc-track" id="legendTrack"></div>
+
+<button type="button" class="lc-arrow right" aria-label="Legend berikutnya">›</button>
+
+</div>
+
+
+<div class="lc-info" id="legendInfo" aria-live="polite">
+
+<h3 class="lc-name" id="legendName"></h3>
+
+<p class="lc-meta" id="legendMeta"></p>
+
+<p class="lc-note" id="legendNote"></p>
+
+<button type="button" class="lc-open" id="legendOpen">VIEW PROFILE ↗</button>
+
+</div>
+
+
+<div class="lc-dots" id="legendDots"></div>
 
 </section>
 
