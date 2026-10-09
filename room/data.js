@@ -24,7 +24,7 @@ const players = {
 
         name: "FITRA",
 
-        role: "TUKANG NGABISIN CP",
+        role: "KANG NGABISIN CP",
 
         position: "Ujung Kiri",
 
@@ -49,7 +49,7 @@ const players = {
 
         position: "Di Tengah",
 
-        speciality: "Photography / Music / Ngedit",
+        speciality: "Mobil / Music / Ngedit",
 
         joined: "2022",
 
@@ -196,7 +196,7 @@ const legends = {
 
         joined: "2024",
 
-        left: "2025",
+        left: "2026",
 
         retired: true,
 
@@ -234,7 +234,7 @@ const legends = {
 
         name: "DINI",
 
-        role: "EDITOR",
+        role: "MAKE UP ARTIST",
 
         position: "Biasanya di Kiri",
 
