@@ -34,6 +34,8 @@ const players = {
 
         image: "assets/fitra.jpg"
 
+        instagram: "namaakun"
+
     },
 
 
@@ -52,6 +54,8 @@ const players = {
         joined: "2022",
 
         image: "assets/alip.jpg"
+       
+        instagram: "namaakun"
 
     },
 
@@ -71,6 +75,8 @@ const players = {
         joined: "2024",
 
         image: "assets/naufal.jpg"
+       
+        instagram: "namaakun"
 
     },
 
@@ -90,6 +96,8 @@ const players = {
         joined: "2026",
 
         image: "assets/nicho.jpg"
+       
+        instagram: "namaakun"
 
     },
 
@@ -109,6 +117,8 @@ const players = {
         joined: "2022",
 
         image: "assets/aang.jpg"
+       
+        instagram: "namaakun"
 
     },
 
@@ -128,6 +138,8 @@ const players = {
         joined: "2023",
 
         image: "assets/bardan.jpg"
+       
+        instagram: "namaakun"
 
     }
 
