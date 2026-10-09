@@ -34,7 +34,7 @@ const players = {
 
         image: "assets/fitra.jpg",
 
-        instagram: "namaakun"
+        instagram: "fitraaadii"
 
     },
 
@@ -55,7 +55,7 @@ const players = {
 
         image: "assets/alip.jpg",
        
-        instagram: "namaakun"
+        instagram: "n0tyoursavi0r"
 
     },
 
@@ -76,7 +76,7 @@ const players = {
 
         image: "assets/naufal.jpg",
        
-        instagram: "namaakun"
+        instagram: "si_naupal"
 
     },
 
@@ -97,7 +97,7 @@ const players = {
 
         image: "assets/nicho.jpg",
        
-        instagram: "namaakun"
+        instagram: "npalapessy"
 
     },
 
@@ -118,7 +118,7 @@ const players = {
 
         image: "assets/aang.jpg",
        
-        instagram: "namaakun"
+        instagram: "seniman.gila"
 
     },
 
@@ -139,7 +139,7 @@ const players = {
 
         image: "assets/bardan.jpg",
        
-        instagram: "namaakun"
+        instagram: "brdnnugrh"
 
     }
 
