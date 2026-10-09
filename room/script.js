@@ -83,6 +83,8 @@ const modalSpeciality = document.getElementById("modalSpeciality");
 
 const modalJoinedLabel = document.getElementById("modalJoinedLabel");
 
+const modalInstagram = document.getElementById("modalInstagram");
+
 const modalJoined = document.getElementById("modalJoined");
 
 
@@ -130,7 +132,15 @@ function openPlayer(playerId) {
         player.left
             ? player.joined + " – " + player.left
             : player.joined;
-
+   
+    /* ikon Instagram: hanya untuk pemain yang punya akun */
+    if (modalInstagram) {
+        modalInstagram.hidden = !player.instagram;
+        if (player.instagram) {
+            modalInstagram.href =
+                "https://www.instagram.com/" + encodeURIComponent(player.instagram);
+        }
+    }
 
     modal.classList.add("active");
 
