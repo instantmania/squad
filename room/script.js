@@ -355,6 +355,256 @@ function renderLegends() {
 
 }
 
+/* =========================================================
+   LEGENDS — CAROUSEL (langkah 3)  →  room/script.js
+
+   1) Tempel fungsi di bawah TEPAT DI BAWAH fungsi lama
+      renderLegends() (jangan hapus yang lama dulu) dan
+      SEBELUM baris pemanggilnya.
+   2) Ganti baris pemanggil:
+          renderLegends();
+      menjadi:
+          renderLegendCarousel();
+   Fungsi memakai helper yang sudah ada di script.js:
+   leftOrder, shortYears, escapeHTML, openPlayer.
+========================================================= */
+
+function renderLegendCarousel() {
+
+    const section = document.getElementById("legends");
+
+    const carousel = document.getElementById("legendCarousel");
+
+    const track = document.getElementById("legendTrack");
+
+    const dotsBox = document.getElementById("legendDots");
+
+    const info = document.getElementById("legendInfo");
+
+    const nameEl = document.getElementById("legendName");
+
+    const metaEl = document.getElementById("legendMeta");
+
+    const noteEl = document.getElementById("legendNote");
+
+    const openBtn = document.getElementById("legendOpen");
+
+    const navLink = document.getElementById("legendsNav");
+
+    const entries = Object.entries(legends);
+
+
+    /* belum ada data / HTML carousel belum dipasang → section tetap tersembunyi */
+    if (!section || !carousel || !track || !dotsBox || !entries.length) return;
+
+
+    section.hidden = false;
+
+    if (navLink) navLink.hidden = false;
+
+
+    /* "present" dulu, lalu yang paling baru keluar */
+    entries.sort(
+        (a, b) =>
+            leftOrder(b[1].left) - leftOrder(a[1].left) ||
+            a[1].name.localeCompare(b[1].name)
+    );
+
+
+    let current = 0;
+
+    let busy = false;
+
+
+    /* ---------- bangun kartu & titik ---------- */
+
+    entries.forEach(([id, p], i) => {
+
+        const card = document.createElement("div");
+
+        card.className = "lc-card";
+
+        card.innerHTML = `
+
+            <img
+                src="${escapeHTML(p.image)}"
+                alt="${escapeHTML(p.name)}"
+                loading="lazy"
+                onerror="this.remove()"
+            >
+
+            ${p.retired
+                ? '<span class="lc-badge">RETIRED</span>'
+                : ""}
+
+            <span class="lc-number">${escapeHTML(p.number)}</span>
+
+        `;
+
+        /* kartu tengah → buka profil; kartu samping → geser ke tengah */
+        card.addEventListener("click", () => {
+
+            if (i === current) openPlayer(id);
+
+            else update(i);
+
+        });
+
+        track.append(card);
+
+
+        const dot = document.createElement("button");
+
+        dot.type = "button";
+
+        dot.className = "lc-dot";
+
+        dot.setAttribute("aria-label", p.name);
+
+        dot.addEventListener("click", () => update(i));
+
+        dotsBox.append(dot);
+
+    });
+
+
+    const cards = [...track.children];
+
+    const dots = [...dotsBox.children];
+
+
+    /* ---------- pindah kartu ---------- */
+
+    function update(next, instant) {
+
+        if (busy && !instant) return;
+
+        busy = true;
+
+
+        current = (next + cards.length) % cards.length;
+
+
+        cards.forEach((card, i) => {
+
+            const offset = (i - current + cards.length) % cards.length;
+
+            card.classList.remove(
+                "center", "left-1", "left-2",
+                "right-1", "right-2", "hidden"
+            );
+
+            if (offset === 0) card.classList.add("center");
+
+            else if (offset === 1) card.classList.add("right-1");
+
+            else if (offset === 2) card.classList.add("right-2");
+
+            else if (offset === cards.length - 1) card.classList.add("left-1");
+
+            else if (offset === cards.length - 2) card.classList.add("left-2");
+
+            else card.classList.add("hidden");
+
+        });
+
+
+        dots.forEach((dot, i) => {
+
+            dot.classList.toggle("active", i === current);
+
+            if (i === current) dot.setAttribute("aria-current", "true");
+
+            else dot.removeAttribute("aria-current");
+
+        });
+
+
+        const p = entries[current][1];
+
+        const fillInfo = () => {
+
+            nameEl.textContent = p.name;
+
+            metaEl.textContent = p.role + " · " + shortYears(p);
+
+            noteEl.textContent = p.position || "";
+
+            info.classList.remove("is-changing");
+
+        };
+
+
+        if (instant) {
+
+            fillInfo();
+
+        } else {
+
+            info.classList.add("is-changing");
+
+            setTimeout(fillInfo, 250);
+
+        }
+
+
+        setTimeout(() => { busy = false; }, 600);
+
+    }
+
+
+    /* ---------- kontrol ---------- */
+
+    carousel.querySelector(".lc-arrow.left")
+        .addEventListener("click", () => update(current - 1));
+
+    carousel.querySelector(".lc-arrow.right")
+        .addEventListener("click", () => update(current + 1));
+
+    openBtn.addEventListener("click", () => openPlayer(entries[current][0]));
+
+
+    /* panah keyboard hanya saat carousel sedang difokus */
+    carousel.addEventListener("keydown", (event) => {
+
+        if (event.key === "ArrowLeft") {
+
+            event.preventDefault();
+
+            update(current - 1);
+
+        } else if (event.key === "ArrowRight") {
+
+            event.preventDefault();
+
+            update(current + 1);
+
+        }
+
+    });
+
+
+    /* geser jari — hanya di area carousel */
+    let touchStartX = 0;
+
+    carousel.addEventListener("touchstart", (event) => {
+
+        touchStartX = event.changedTouches[0].screenX;
+
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", (event) => {
+
+        const diff = touchStartX - event.changedTouches[0].screenX;
+
+        if (Math.abs(diff) > 50) update(current + (diff > 0 ? 1 : -1));
+
+    }, { passive: true });
+
+
+    update(0, true);
+
+}
 
 renderLegends();
 
