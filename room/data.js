@@ -83,7 +83,7 @@ const players = {
 
     nicho: {
 
-        number: "08",
+        number: "33",
 
         name: "NICHO",
 
@@ -276,7 +276,7 @@ const legends = {
 
     ihsan: {
 
-        number: "88",
+        number: "08",
 
         name: "IHSAN",
 
