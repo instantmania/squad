@@ -434,38 +434,6 @@ const matchdays = [
     },
    
     {
-        date: "2025-02-17",
-        title: "Perayaan",
-        place: "Banda, Bandung",
-        page: "matchday/dirgahayu_2026.html"
-    },
- 
-    {
-        date: "2025-01-17",
-        title: "Percobaan",
-        place: "Banda, Bandung",
-        page: "matchday/dirgahayu_2026.html"
-    },
-
-    
-    {
-        date: "2025-04-17",
-        title: "Pelepasan",
-        place: "Banda, Bandung",
-        page: "matchday/dirgahayu_2026.html"
-    },
-   
-
-    
-    {
-        date: "2025-06-17",
-        title: "Penyangkalan",
-        place: "Banda, Bandung",
-        page: "matchday/dirgahayu_2026.html"
-    },
-   
-   
-    {
         date: "2024-08-17",
         title: "DIRGAHAYU RI-79",
         place: "Banda, Bandung",
