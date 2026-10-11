@@ -446,3 +446,149 @@ a.mission-image:focus-visible,
     }
 
 }
+
+/* =========================================
+   MATCHDAY — POPUP "VIEW ALL" (langkah 3)
+   Tempel di PALING BAWAH room/matchday.css
+   Overlay memakai .player-modal yang sudah ada;
+   baris acara memakai .fixture yang sudah ada.
+========================================= */
+
+.md-box {
+
+    width: min(560px, 100%);
+
+    max-height: 82vh;
+
+    max-height: 82dvh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: var(--off-white);
+
+}
+
+
+.md-head {
+
+    flex: none;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 26px 14px;
+
+    border-bottom: 1px solid var(--black);
+
+    font-family: var(--heading);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: .06em;
+
+}
+
+
+.md-close {
+
+    border: 0;
+
+    background: none;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+}
+
+
+.md-close:focus-visible {
+
+    outline: 2px solid var(--blue);
+
+    outline-offset: 4px;
+
+}
+
+
+/* daftar bisa digulir kalau acaranya banyak */
+.md-list {
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+
+    padding: 0 26px 10px;
+
+}
+
+
+/* judul tahun menempel di atas saat menggulir */
+.md-year {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1;
+
+    padding: 18px 0 8px;
+
+    background: var(--off-white);
+
+    font-family: var(--heading);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: .15em;
+
+    color: var(--blue);
+
+}
+
+
+.md-empty {
+
+    padding: 30px 0;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+}
+
+
+@media (max-width: 900px) {
+
+    .md-modal {
+
+        padding: 16px;
+
+    }
+
+
+    .md-head {
+
+        padding: 16px 20px 12px;
+
+    }
+
+
+    .md-list {
+
+        padding: 0 20px 8px;
+
+    }
+
+}
