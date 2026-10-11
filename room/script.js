@@ -722,3 +722,170 @@ document
         });
 
     });
+
+
+/* =========================================================
+   MATCHDAY — POPUP "VIEW ALL" (langkah 4)
+   Tempel di PALING BAWAH room/script.js.
+   Memakai: `matchdays` (data.js) dan `escapeHTML` (script.js).
+========================================================= */
+
+const MD_MONTHS = [
+    "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+    "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"
+];
+
+
+const matchdayValid = (item) => {
+
+    if (!/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/.test(item.date || "")) {
+
+        console.warn("Matchday: format tanggal salah →", item.date, item.title);
+
+        return false;
+
+    }
+
+    return true;
+
+};
+
+
+function matchdayRow(item) {
+
+    const [year, month, day] = item.date.split("-");
+
+    const inner = `
+
+        <div class="fixture-date">
+            <strong>${escapeHTML(day)}</strong>
+            <span>${MD_MONTHS[Number(month) - 1]} ${escapeHTML(year)}</span>
+        </div>
+
+        <div class="fixture-info">
+            <strong>${escapeHTML(item.title || "")}</strong>
+            <span>${escapeHTML(item.place || "")}</span>
+        </div>
+
+        <span>${item.page ? "→" : ""}</span>
+
+    `;
+
+    /* ada artikel → link; belum ada → baris biasa tanpa panah */
+    return item.page
+        ? `<a href="${escapeHTML(item.page)}" class="fixture">${inner}</a>`
+        : `<div class="fixture">${inner}</div>`;
+
+}
+
+
+function renderMatchdayList() {
+
+    const list = document.getElementById("matchdayList");
+
+    if (!list || typeof matchdays === "undefined") return;
+
+
+    /* terbaru dulu */
+    const items = matchdays
+        .filter(matchdayValid)
+        .sort((a, b) => b.date.localeCompare(a.date));
+
+
+    if (!items.length) {
+
+        list.innerHTML = '<p class="md-empty">Belum ada acara.</p>';
+
+        return;
+
+    }
+
+
+    /* kelompokkan per tahun */
+    let html = "";
+
+    let currentYear = "";
+
+    items.forEach((item) => {
+
+        const year = item.date.slice(0, 4);
+
+        if (year !== currentYear) {
+
+            currentYear = year;
+
+            html += `<div class="md-year">${year}</div>`;
+
+        }
+
+        html += matchdayRow(item);
+
+    });
+
+
+    list.innerHTML = html;
+
+}
+
+
+/* ---------- buka / tutup ---------- */
+
+const matchdayModal = document.getElementById("matchdayModal");
+
+const matchdayOpen = document.getElementById("matchdayViewAll");
+
+const matchdayClose = document.getElementById("matchdayClose");
+
+
+if (matchdayModal && matchdayOpen && matchdayClose) {
+
+    renderMatchdayList();
+
+
+    const setMatchdays = (open) => {
+
+        matchdayModal.classList.toggle("active", open);
+
+        document.body.style.overflow = open ? "hidden" : "";
+
+        if (open) matchdayClose.focus();
+
+        else matchdayOpen.focus();
+
+    };
+
+
+    matchdayOpen.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        setMatchdays(true);
+
+    });
+
+
+    matchdayClose.addEventListener("click", () => setMatchdays(false));
+
+
+    /* klik area gelap = tutup */
+    matchdayModal.addEventListener("click", (event) => {
+
+        if (event.target === matchdayModal) setMatchdays(false);
+
+    });
+
+
+    document.addEventListener("keydown", (event) => {
+
+        if (
+            event.key === "Escape" &&
+            matchdayModal.classList.contains("active")
+        ) {
+
+            setMatchdays(false);
+
+        }
+
+    });
+
+}
