@@ -392,3 +392,52 @@ const potm = [
     { month: "2026-09", player: "naufal", reason: "" }
 
 ];
+
+/* =========================================================
+   MATCHDAY — DATA (langkah 1)
+   Tempel di PALING BAWAH room/data.js
+   (setelah array `potm`).
+
+   Satu baris per acara:
+   date  : "TAHUN-BULAN-TANGGAL" → "2026-09-29"
+   title : judul acara
+   place : lokasi
+   page  : file artikel, mis. "matchday/nathans-farewell.html".
+           Kosong ("") = acara tampil tanpa link/panah.
+
+   Urutan di sini bebas — popup mengurutkan sendiri
+   dari yang paling baru dan mengelompokkan per tahun.
+   Acara baru: tambah satu baris saja.
+========================================================= */
+
+const matchdays = [
+
+    {
+        date: "2026-09-29",
+        title: "NATHAN'S FAREWELL",
+        place: "Submarine, Bandung",
+        page: "matchday/nathans-farewell.html"
+    },
+
+    {
+        date: "2026-09-07",
+        title: "BENAYA REUNION",
+        place: "Dikichi, Bandung",
+        page: "matchday/benaya-reunion.html"
+    },
+
+    {
+        date: "2026-08-17",
+        title: "DIRGAHAYU RI-81",
+        place: "Banda, Bandung",
+        page: "matchday/dirgahayu_2026.html"
+    },
+
+    {
+        date: "2024-08-17",
+        title: "DIRGAHAYU RI-79",
+        place: "Banda, Bandung",
+        page: "matchday/dirgahayu_2024.html"
+    }
+
+];
