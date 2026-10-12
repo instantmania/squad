@@ -443,8 +443,8 @@ const matchdays = [
     {
         date: "2025-11-09",
         title: "“THE LAST DANCE” MAS BEN",
-        place: "Banda, Bandung",
-        page: "matchday/matchday/last_dance.html",
+        place: "Bardan's Home, Bandung",
+        page: "matchday/last_dance.html",
         cover: "assets/matchday/lastdancemasben/cover.jpg",
         summary: "Diabadikan waktu, dirindukan nanti"
     },
