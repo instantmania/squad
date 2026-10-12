@@ -432,6 +432,13 @@ const matchdays = [
         place: "Banda, Bandung",
         page: "matchday/dirgahayu_2026.html"
     },
+
+ {
+        date: "2025-11-09",
+        title: "`THE LAST DANCE` MAS BEN",
+        place: "Bardan's Home, Bandung",
+        page: "matchday/last_dance.html"
+    },
    
     {
         date: "2024-08-17",
