@@ -423,7 +423,7 @@ const matchdays = [
 
     {
         date: "2026-09-07",
-        title: "BENAYA REUNION",,
+        title: "BENAYA REUNION",
         place: "Dikichi, Bandung",
         page: "matchday/benaya-reunion.html",
         cover: "assets/matchday/benaya-reunion/benaya-reunion.jpg",
