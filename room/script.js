@@ -889,3 +889,97 @@ if (matchdayModal && matchdayOpen && matchdayClose) {
     });
 
 }
+/* =========================================================
+   MATCHDAY DI HOMEPAGE — otomatis dari data (langkah 3)
+   Tempel di PALING BAWAH room/script.js, DI BAWAH blok
+   popup Matchday (karena memakai matchdayValid dan
+   matchdayRow dari blok itu).
+========================================================= */
+
+/* ----- pengaturan yang bisa kamu ubah ----- */
+
+/* tulisan kecil di atas judul pada kartu foto besar */
+const MD_LABEL = "LATEST MATCHDAY";
+
+/* kalimat di bawah kartu foto besar kalau acara tidak punya `summary` */
+const MD_DEFAULT_SUMMARY = "Capturing special moments with the best team.";
+
+/* jumlah acara di daftar kanan */
+const MD_LATEST_COUNT = 4;
+
+
+function renderMatchdayHome() {
+
+    if (typeof matchdays === "undefined") return;
+
+
+    const featured = document.getElementById("matchdayFeatured");
+
+    const latest = document.getElementById("matchdayLatest");
+
+
+    /* terbaru dulu */
+    const items = matchdays
+        .filter(matchdayValid)
+        .sort((a, b) => b.date.localeCompare(a.date));
+
+
+    if (!items.length) return;
+
+
+    /* daftar kanan: N acara terbaru */
+    if (latest) {
+
+        latest.innerHTML = items
+            .slice(0, MD_LATEST_COUNT)
+            .map(matchdayRow)
+            .join("");
+
+    }
+
+
+    /* kartu foto besar: acara paling baru */
+    if (featured) {
+
+        const top = items[0];
+
+        /* judul dipecah 2 baris di spasi pertama (NATHAN'S / FAREWELL) */
+        const title = escapeHTML(top.title || "").replace(" ", "<br>");
+
+        const tag = top.page ? "a" : "div";
+
+        const href = top.page ? ` href="${escapeHTML(top.page)}"` : "";
+
+
+        featured.innerHTML = `
+
+            <${tag} class="mission-image"${href} style="background:#111">
+
+                ${top.cover
+                    ? `<img src="${escapeHTML(top.cover)}" alt="${escapeHTML(top.title || "")}">`
+                    : ""}
+
+                <div class="mission-overlay">
+
+                    <span>${escapeHTML(MD_LABEL)}</span>
+
+                    <h3>${title}</h3>
+
+                </div>
+
+            </${tag}>
+
+            <div class="mission-content">
+
+                <p>${escapeHTML(top.summary || MD_DEFAULT_SUMMARY)}</p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+renderMatchdayHome();
