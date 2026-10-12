@@ -391,13 +391,15 @@ The Instant Mania way.
 
 
 <!-- =========================================
-    MATCHDAY
-========================================= -->
+    MATCHDAY DI HOMEPAGE — otomatis dari data (langkah 2)
 
-<!-- =========================================
-    MATCHDAY
-    Ganti SELURUH section matchday lama dengan ini
+    Ganti SELURUH section Matchday lama
     (dari <section ... id="matchday"> sampai </section>)
+    dengan blok di bawah ini.
+
+    Kartu foto besar dan daftar "ALL FIXTURES" sekarang
+    kosong di HTML; script.js yang mengisinya dari
+    `matchdays` di data.js. Bagian PROJECT PROGRESS dihapus.
 ========================================= -->
 
 <section class="section matchday-section" id="matchday">
@@ -423,145 +425,16 @@ Same energy.
 
 <div class="matchday-grid">
 
-<div class="mission-card reveal">
-
-<a href="matchday/nathans-farewell.html" class="mission-image">
-
-<img
-src="assets/nathanfarewell.jpg"
-alt="Nathan's Farewell"
->
-
-<div class="mission-overlay">
-
-<span>
-CURRENT MISSION
-</span>
-
-<h3>
-NATHAN'S<br>
-FAREWELL
-</h3>
-
-</div>
-
-</a>
-
-
-<div class="mission-content">
-
-<p>
-Capturing special moments
-with the best team.
-</p>
-
-<div class="progress">
-
-<div class="progress-label">
-<span>PROJECT PROGRESS</span>
-<strong>85%</strong>
-</div>
-
-<div class="progress-bar">
-<span style="width:85%"></span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+<div class="mission-card reveal" id="matchdayFeatured"></div>
 
 <div class="fixtures reveal">
 
 <div class="fixtures-header">
-<span>ALL MATCHDAY</span>
+<span>ALL FIXTURES</span>
 <a href="#" id="matchdayViewAll">VIEW ALL →</a>
 </div>
 
-
-<a href="matchday/nathans-farewell.html" class="fixture">
-
-<div class="fixture-date">
-<strong>29</strong>
-<span>SEP 2026</span>
-</div>
-
-<div class="fixture-info">
-<strong>NATHAN'S FAREWELL</strong>
-<span>Submarine, Bandung</span>
-</div>
-
-<span>→</span>
-
-</a>
-
-
-<a href="matchday/benaya-reunion.html" class="fixture">
-
-<div class="fixture-date">
-<strong>07</strong>
-<span>SEP 2026</span>
-</div>
-
-<div class="fixture-info">
-<strong>BENAYA REUNION</strong>
-<span>Dikichi, Bandung</span>
-</div>
-
-<span>→</span>
-
-</a>
-
-
-<a href="matchday/dirgahayu_2026.html" class="fixture">
-
-<div class="fixture-date">
-<strong>17</strong>
-<span>AUG 2026</span>
-</div>
-
-<div class="fixture-info">
-<strong>DIRGAHAYU RI-81</strong>
-<span>Banda, Bandung</span>
-</div>
-
-<span>→</span>
-
-</a>
-
-<a href="matchday/last_dance.html" class="fixture">
-
-<div class="fixture-date">
-<strong>09</strong>
-<span>NOV 2025</span>
-</div>
-
-<div class="fixture-info">
-<strong>`LAST DANCE` MAS BEN</strong>
-<span>Bardan's Home, Bandung</span>
-</div>
-
-<span>→</span>
-
-</a>
-    
-<a href="matchday/dirgahayu_2024.html" class="fixture">
-
-<div class="fixture-date">
-<strong>17</strong>
-<span>AUG 2024</span>
-</div>
-
-<div class="fixture-info">
-<strong>DIRGAHAYU RI-79</strong>
-<span>Banda, Bandung</span>
-</div>
-
-<span>→</span>
-
-</a>
+<div id="matchdayLatest"></div>
 
 </div>
 
