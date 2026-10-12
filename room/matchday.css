@@ -592,3 +592,291 @@ a.mission-image:focus-visible,
     }
 
 }
+/* =========================================
+   LIGHTBOX FOTO MATCHDAY
+   Tempel di PALING BAWAH room/matchday.css
+   (file itu sudah dimuat di halaman artikel).
+========================================= */
+
+/* foto yang bisa diklik */
+.article-cover img,
+.article-gallery img {
+
+    cursor: zoom-in;
+
+}
+
+
+.article-cover img:focus-visible,
+.article-gallery img:focus-visible {
+
+    outline: 2px solid var(--blue);
+
+    outline-offset: -2px;
+
+}
+
+
+/* ---------- jendela pratinjau ---------- */
+
+.lb {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 300;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0,0,0,.94);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
+
+}
+
+
+.lb.open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.lb-stage {
+
+    width: 100%;
+
+    height: 100%;
+
+    margin: 0;
+
+    padding: 60px 84px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* rasio asli dipertahankan: potret tetap potret, lanskap tetap lanskap */
+.lb-img {
+
+    width: auto;
+
+    height: auto;
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+    object-fit: contain;
+
+    cursor: default;
+
+    transition: opacity .2s ease;
+
+}
+
+
+.lb-img.loading {
+
+    opacity: 0;
+
+}
+
+
+.lb-close {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 18px;
+
+    z-index: 2;
+
+    border: 0;
+
+    background: none;
+
+    color: var(--white);
+
+    font-family: var(--body);
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+}
+
+
+.lb-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 2;
+
+    width: 48px;
+
+    height: 48px;
+
+    transform: translateY(-50%);
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    background: transparent;
+
+    color: var(--white);
+
+    font-family: var(--body);
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    padding-bottom: 3px;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+
+}
+
+
+.lb-arrow[hidden],
+.lb-count[hidden] {
+
+    display: none;
+
+}
+
+
+.lb-arrow:hover,
+.lb-arrow:focus-visible {
+
+    background: var(--white);
+
+    color: var(--black);
+
+    outline: none;
+
+}
+
+
+.lb-close:focus-visible {
+
+    outline: 2px solid var(--white);
+
+    outline-offset: 4px;
+
+}
+
+
+.lb-prev {
+
+    left: 18px;
+
+}
+
+
+.lb-next {
+
+    right: 18px;
+
+}
+
+
+.lb-count {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 18px;
+
+    text-align: center;
+
+    font-family: var(--heading);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: .15em;
+
+    color: rgba(255,255,255,.7);
+
+}
+
+
+@media (max-width: 900px) {
+
+    .lb-stage {
+
+        padding: 56px 10px;
+
+    }
+
+
+    .lb-arrow {
+
+        width: 40px;
+
+        height: 40px;
+
+        background: rgba(0,0,0,.45);
+
+    }
+
+
+    .lb-prev {
+
+        left: 8px;
+
+    }
+
+
+    .lb-next {
+
+        right: 8px;
+
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .lb,
+    .lb-img,
+    .lb-arrow {
+
+        transition: none;
+
+    }
+
+}
