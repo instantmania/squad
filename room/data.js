@@ -417,7 +417,7 @@ const matchdays = [
         title: "NATHAN'S FAREWELL",
         place: "Submarine, Bandung",
         page: "matchday/nathans-farewell.html",
-        cover: "assets/matchday/nathanfarewell/nathanfarewell.jpg",
+        cover: "assets/matchday/nathans-farewell/nathanfarewell.jpg",
         summary: "Pada Karawang, Nathan kembali pulang."
     },
 
