@@ -412,39 +412,51 @@ const potm = [
 
 const matchdays = [
 
-    {
+     {
         date: "2026-09-29",
         title: "NATHAN'S FAREWELL",
         place: "Submarine, Bandung",
-        page: "matchday/nathans-farewell.html"
+        page: "matchday/nathans-farewell.html",
+        cover: "assets/matchday/nathanfarewell/nathanfarewell.jpg",
+        summary: "Pada Karawang, Nathan kembali pulang."
     },
 
     {
         date: "2026-09-07",
-        title: "BENAYA REUNION",
+        title: "BENAYA REUNION",,
         place: "Dikichi, Bandung",
-        page: "matchday/benaya-reunion.html"
-    },
-
-    {
-        date: "2026-08-17",
-        title: "DIRGAHAYU RI-81",
-        place: "Banda, Bandung",
-        page: "matchday/dirgahayu_2026.html"
-    },
-
- {
-        date: "2025-11-09",
-        title: "`THE LAST DANCE` MAS BEN",
-        place: "Bardan's Home, Bandung",
-        page: "matchday/last_dance.html"
+        page: "matchday/benaya-reunion.html",
+        cover: "assets/matchday/benaya-reunion/benaya-reunion.jpg",
+        summary: "Pertemuan kecil, makna yang besar"
     },
    
-    {
-        date: "2024-08-17",
-        title: "DIRGAHAYU RI-79",
+   {
+        date: "2026-08-17",
+        title: "DIRGAHAYU RI-81 2026",
         place: "Banda, Bandung",
-        page: "matchday/dirgahayu_2024.html"
+        page: "matchday/dirgahayu_2026.html",
+        cover: "assets/matchday/dirgahayu_2026/dirgahayu_2026.jpg",
+        summary: "Perayaan merdeka yang tidak sama"
+    },
+   
+   
+    {
+        date: "2025-11-09",
+        title: "“THE LAST DANCE” MAS BEN",
+        place: "Banda, Bandung",
+        page: "matchday/matchday/last_dance.html",
+        cover: "assets/matchday/lastdancemasben/cover.jpg",
+        summary: "Diabadikan waktu, dirindukan nanti"
+    },
+
+   {
+        date: "2024-08-17",
+        title: "DIRGAHAYU RI-79 2024",
+        place: "Banda, Bandung",
+        page: "matchday/dirgahayu_2024.html",
+        cover: "assets/matchday/dirgahayu_2024/dirgahayu_2024.jpg",
+        summary: "Perayaan kecil, Indonesia Merdeka"
     }
+   
 
 ];
