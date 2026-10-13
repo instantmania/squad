@@ -1,0 +1,175 @@
+/* =========================================
+   FORMATION — PEMAIN BISA DIGERAK (tahap 1)
+   Simpan sebagai: room/formation.css  (file baru, DIUNGGAH)
+   Pasang di <head> index.html, setelah link CSS lainnya:
+       <link rel="stylesheet" href="room/formation.css">
+========================================= */
+
+/* gambar tidak boleh "tertarik" sendiri oleh browser */
+.pitch img {
+
+    pointer-events: none;
+
+    -webkit-user-drag: none;
+
+    user-select: none;
+
+}
+
+
+/* ---------- tombol di atas lapangan ---------- */
+
+.formation-controls {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px 16px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.formation-btn {
+
+    padding: 12px 22px;
+
+    border: 1px solid var(--black);
+
+    background: var(--off-white);
+
+    color: var(--black);
+
+    font-family: var(--heading);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: .08em;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease;
+
+}
+
+
+.formation-btn[hidden],
+.formation-hint[hidden] {
+
+    display: none;
+
+}
+
+
+.formation-btn:hover,
+.formation-btn:focus-visible {
+
+    background: var(--blue);
+
+    border-color: var(--blue);
+
+    color: var(--white);
+
+    outline: none;
+
+}
+
+
+.formation-btn.primary {
+
+    background: var(--black);
+
+    color: var(--white);
+
+}
+
+
+.formation-btn.primary:hover,
+.formation-btn.primary:focus-visible {
+
+    background: var(--blue);
+
+}
+
+
+.formation-hint {
+
+    font-family: var(--heading);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: .15em;
+
+    color: var(--gray);
+
+}
+
+
+/* ---------- saat mode PLAY ---------- */
+
+.pitch.is-playing {
+
+    border-color: var(--blue);
+
+}
+
+
+.pitch.is-playing .formation-player {
+
+    cursor: grab;
+
+    touch-action: none;
+
+    user-select: none;
+
+}
+
+
+.pitch.is-playing .formation-player.dragging {
+
+    z-index: 10;
+
+    cursor: grabbing;
+
+}
+
+
+.pitch.is-playing .formation-photo {
+
+    box-shadow: 0 0 0 5px rgba(20,92,255,.15);
+
+}
+
+
+/* gerak halus saat RESET */
+.pitch.resetting .formation-player {
+
+    transition:
+        left .5s ease,
+        top .5s ease;
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pitch.resetting .formation-player {
+
+        transition: none;
+
+    }
+
+}
