@@ -153,7 +153,7 @@
         const half = F.size().w / 2;
 
 
-        const box = [...F.pitch.querySelectorAll(".pitch-box")].find((b) => {
+        const box = [...F.pitch.querySelectorAll(".pitch-goal")].find((b) => {
 
             const r = b.getBoundingClientRect();
 
