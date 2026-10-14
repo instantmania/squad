@@ -1,0 +1,139 @@
+/* =========================================
+   DENAH LAPANGAN BARU
+   Simpan sebagai: room/pitch.css  (file baru, DIUNGGAH)
+   Pasang di <head> index.html, SETELAH style.css dan formation.css:
+       <link rel="stylesheet" href="room/pitch.css">
+
+   Proporsi diukur dari denah buatanmu (lapangan 988 x 519 px):
+   - kotak 16 (penalti): kedalaman 16%, tinggi 59%, di tengah
+   - kotak gawang / safe area kiper: sudah ada (.pitch-box, 10% x 38%)
+   - busur penalti di luar kotak 16
+   - gawang: garis biru kecil di dalam kotak gawang (21,4% tinggi lapangan)
+========================================= */
+
+
+/* 1. Kotak 16: tidak lagi membentang dari ujung ke ujung.
+      (.pitch::before = kiri, .pitch::after = kanan; dari style.css) */
+.pitch::before,
+.pitch::after {
+
+    top: 20.3%;
+
+    height: 59%;
+
+}
+
+
+/* 2. Busur penalti — setengah lingkaran di luar kotak 16 */
+.pitch-arc {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 9.3%;
+
+    aspect-ratio: 1;
+
+    border: 1px solid #d5d5d0;
+
+    border-radius: 50%;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+}
+
+
+.pitch-arc.left {
+
+    left: 9%;
+
+    clip-path: inset(0 0 0 76%);
+
+}
+
+
+.pitch-arc.right {
+
+    right: 9%;
+
+    clip-path: inset(0 76% 0 0);
+
+}
+
+
+/* 3. Gawang — jauh lebih kecil dari kotak gawang (safe area kiper).
+      Tinggi di sini = ukuran gawang yang dipakai permainan gol
+      (formation-goal.js membaca ukuran elemen ini). */
+.pitch-goal {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 4px;
+
+    height: 21.4%;
+
+    background: var(--blue);
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+
+.pitch-goal.left {
+
+    left: 0;
+
+}
+
+
+.pitch-goal.right {
+
+    right: 0;
+
+}
+
+
+/* kilau gawang saat gol (menggantikan kedipan latar, supaya garis biru tidak hilang) */
+.pitch-goal.goal-hit {
+
+    animation: goalGlow .6s ease 3;
+
+}
+
+
+@keyframes goalGlow {
+
+    0%,
+    100% {
+
+        box-shadow: 0 0 0 0 rgba(20,92,255,0);
+
+    }
+
+    50% {
+
+        box-shadow: 0 0 22px 10px rgba(20,92,255,.55);
+
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pitch-goal.goal-hit {
+
+        animation: none;
+
+    }
+
+}
