@@ -107,7 +107,7 @@
 
             minX: p.radius,
 
-            maxX: w - boxW + p.radius,
+            maxX: w - p.radius,
 
             minY: boxH / 2,
 
@@ -138,7 +138,17 @@
 
         p.el.style.bottom = "auto";
 
-        p.el.style.transform = "translate(-" + p.radius + "px, -50%)";
+        const w = size().w;
+ 
+        const need = p.el.offsetWidth - p.radius;     /* lebar label di kanan pusat foto */
+ 
+        const x = p.fx * w;
+ 
+        p.flip = p.flip ? x + need > w - 12 : x + need > w;
+ 
+        p.el.style.flexDirection = p.flip ? "row-reverse" : "";
+ 
+        p.el.style.transform = "translate(-" + (p.flip ? need : p.radius) + "px, -50%)";
 
     }
 
@@ -165,6 +175,7 @@
 
 
     players.forEach(apply);
+    window.addEventListener("resize", () => players.forEach(apply));
 
 
     /* ---------- tombol kontrol ---------- */
