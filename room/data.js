@@ -412,7 +412,17 @@ const potm = [
 
 const matchdays = [
 
-     {
+  
+        {
+        date: "2026-10-01",
+        title: "INSTANT MANIA x TEMAN TULI",
+        place: "Bandung",
+        page: "matchday/xtemantuli.html",
+        cover: "assets/matchday/xtemantuli/xtemantulicover.jpg",
+        summary: "Belajar, bertumbuh dan saling menguatkan."
+    },
+
+   {
         date: "2026-09-29",
         title: "NATHAN'S FAREWELL",
         place: "Submarine, Bandung",
