@@ -1,0 +1,75 @@
+
+backend:
+  name: turbo-github
+  turbo_site_id: GANTI_DENGAN_SITE_ID_DARI_DECAP_TURBO
+  branch: main
+
+locale: id
+
+site_url: https://instantmania.github.io/squad
+display_url: https://instantmania.github.io/squad
+
+media_folder: "assets/uploads"
+public_folder: "/squad/assets/uploads"
+
+publish_mode: simple
+
+slug:
+  encoding: unicode
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: "articles"
+    label: "Artikel"
+    label_singular: "Artikel"
+    folder: "content/articles"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields:
+      - date
+      - title
+    fields:
+      - label: "Judul"
+        name: "title"
+        widget: "string"
+
+      - label: "Slug URL"
+        name: "slug"
+        widget: "string"
+        hint: "Contoh: instant-mania-x-teman-tuli"
+
+      - label: "Tanggal"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DDTHH:mm:ssZ"
+
+      - label: "Kategori"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Matchday", value: "MATCHDAY" }
+          - { label: "Story", value: "STORY" }
+          - { label: "News", value: "NEWS" }
+          - { label: "Team", value: "TEAM" }
+
+      - label: "Foto Cover"
+        name: "cover"
+        widget: "image"
+        required: false
+
+      - label: "Ringkasan"
+        name: "description"
+        widget: "text"
+
+      - label: "Tampilkan di Website"
+        name: "published"
+        widget: "boolean"
+        default: true
+
+      - label: "Isi Artikel"
+        name: "body"
+        widget: "markdown"
