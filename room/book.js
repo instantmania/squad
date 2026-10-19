@@ -16,7 +16,7 @@
    yang menunjukkan nama file yang harus diisi.
 ========================================================== */
 const BOOK_COVER = {
-  title: "History<br>Family's<br>Book",
+  title: "Family<br>History<br>Book",
   sub: "INSTANT MANIA PROJECT"
 };
 
