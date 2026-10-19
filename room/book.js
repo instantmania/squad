@@ -17,7 +17,7 @@
 ========================================================== */
 const BOOK_COVER = {
   title: "Family<br>History<br>Book",
-  sub: "INSTANT MANIA PROJECT"
+  sub: "Zhafira Zahra"
 };
 
 const BOOK_PAGES = [
