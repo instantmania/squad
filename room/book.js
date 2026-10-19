@@ -22,7 +22,7 @@ const BOOK_COVER = {
 
 const BOOK_PAGES = [
   { title:"Prolog",               text:"Setiap keluarga memiliki cerita, dan inilah kisah yang kami sebut rumah.",                 img:"../assets/project/book/page-01.jpg" },
-  { title:"Asal Usul",            text:"Rumah bukan sekadar tempat tinggal, melainkan tempat hati selalu ingin pulang.",                   img:"../assets/project/book/page-02.jpg", full:true },
+  { title:"Teman Hidup",            text:"Rumah bukan sekadar tempat tinggal, melainkan tempat hati selalu ingin pulang.",                   img:"../assets/project/book/page-02.jpg", full:true },
   { title:"Kakek & Nenek",        text:"Kisah generasi pertama yang kamu kenal.",                     img:"../assets/project/book/page-03.jpg" },
   { title:"Masa Muda",            text:"Cerita masa muda para orang tua dan kakek-nenek.",            img:"../assets/project/book/page-04.jpg" },
   { title:"Orang Tua",            text:"Perjalanan hidup ayah dan ibu.",                              img:"../assets/project/book/page-05.jpg", full:true },
