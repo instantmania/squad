@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Project — History Family's Book | Instant Mania</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111'/><text x='50' y='70' font-size='58' font-weight='900' text-anchor='middle' fill='white' font-family='sans-serif'>IM</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f2f0; --ink:#111; --muted:#6b6b68; --paper:#f7f7f5; --line:#d9d9d5;
+  --pw:min(42vw,380px);           /* lebar 1 halaman */
+  --ph:calc(var(--pw)*1.4189);    /* rasio A5 (14,8 x 21) */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;display:flex;flex-direction:column;min-height:100vh;overflow-x:hidden}
+
+/* header */
+.header{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand-mark{background:var(--ink);color:#fff;font:900 15px 'Barlow Condensed',sans-serif;padding:4px 7px;letter-spacing:.5px}
+.brand-name{font:600 12px 'Inter',sans-serif;letter-spacing:.18em}
+.back{font:600 13px 'Barlow Condensed',sans-serif;letter-spacing:.12em;color:var(--ink);text-decoration:none}
+
+/* title */
+.title{padding:28px 28px 0;max-width:1100px;width:100%;margin:0 auto}
+.title h1{font:900 clamp(44px,8vw,84px)/.95 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.title h1 span{font-weight:600}
+.title p{margin-top:10px;color:var(--muted);font-size:14px}
+
+/* stage */
+.stage{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px 12px 20px;perspective:2400px;touch-action:pan-y}
+.book{position:relative;width:calc(var(--pw)*2);height:var(--ph);transform-style:preserve-3d;transition:transform .9s cubic-bezier(.6,.05,.2,1);transform:translateX(-25%)}
+.book.s-open{transform:translateX(0)}
+.book.s-end{transform:translateX(25%)}
+.book::after{content:"";position:absolute;left:4%;right:4%;bottom:-26px;height:22px;background:radial-gradient(ellipse at center,rgba(0,0,0,.28),transparent 70%);filter:blur(6px);z-index:-1}
+
+.backcover{position:absolute;left:50%;top:0;width:var(--pw);height:100%;background:#e4e4e1;border-radius:0 4px 4px 0;box-shadow:inset 0 0 0 1px #cfcfcb,2px 2px 0 #d6d6d2,4px 4px 0 #cdcdc9}
+.leaf{position:absolute;left:50%;top:0;width:var(--pw);height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.6,.05,.2,1);cursor:pointer}
+.leaf.flipped{transform:rotateY(-180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--paper);overflow:hidden;display:flex;flex-direction:column;padding:8% 9% 11%}
+.face.front{border-radius:0 3px 3px 0;box-shadow:inset 14px 0 18px -14px rgba(0,0,0,.22)}
+.face.back{transform:rotateY(180deg);border-radius:3px 0 0 3px;box-shadow:inset -14px 0 18px -14px rgba(0,0,0,.22)}
+
+/* cover */
+.face.cover{background:#ececea linear-gradient(135deg,#f3f3f1,#e2e2df);align-items:center;justify-content:center;text-align:center;box-shadow:inset 10px 0 12px -8px rgba(0,0,0,.25),inset 0 0 0 1px #d4d4d0,3px 3px 0 #d0d0cc}
+.cover .mark{background:var(--ink);color:#fff;font:900 18px 'Barlow Condensed',sans-serif;padding:5px 9px;margin-bottom:22px}
+.cover h2{font:900 clamp(26px,4.2vw,46px)/.95 'Barlow Condensed',sans-serif;text-transform:uppercase}
+.cover small{margin-top:14px;font-size:clamp(8px,1vw,11px);letter-spacing:.25em;color:var(--muted)}
+.cover .hint{position:absolute;bottom:7%;font:600 11px 'Barlow Condensed',sans-serif;letter-spacing:.25em;color:var(--muted);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.35}}
+
+/* page content */
+.num{position:absolute;bottom:4.5%;font:600 11px 'Barlow Condensed',sans-serif;letter-spacing:.15em;color:var(--muted)}
+.face.front .num{right:9%}.face.back .num{left:9%}
+.eyebrow{font:600 10px 'Barlow Condensed',sans-serif;letter-spacing:.25em;color:var(--muted);margin-bottom:6px}
+.face h3{font:800 clamp(18px,2.6vw,28px)/1 'Barlow Condensed',sans-serif;text-transform:uppercase;margin-bottom:8px}
+.face p{font-size:clamp(8.5px,1.05vw,12px);line-height:1.6;color:#3d3d3a}
+.slot{position:relative;flex:1;min-height:0;margin-bottom:12px;border:1.5px dashed #b9b9b4;background:repeating-linear-gradient(45deg,#efefec,#efefec 8px,#f5f5f3 8px,#f5f5f3 16px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--muted);overflow:hidden}
+.slot b{font:700 clamp(12px,1.8vw,20px) 'Barlow Condensed',sans-serif;letter-spacing:.15em}
+.slot small{font-size:clamp(7px,.85vw,10px);margin-top:4px;padding:0 8px;word-break:break-all}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot.has-img{border:0}
+.face.full{padding:0}
+.face.full .slot{margin:0;border:0;border-radius:inherit}
+.face.full .cap{position:absolute;left:0;right:0;bottom:0;padding:18% 9% 8%;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;z-index:2}
+.face.full .cap h3{margin:0;color:#fff}.face.full .cap p{color:#eee}
+.face.full .num{z-index:3;color:#fff}
+.face.end{align-items:center;justify-content:center;text-align:center}
+
+/* controls */
+.controls{display:flex;align-items:center;gap:18px;margin-top:46px}
+.controls button{background:var(--ink);color:#fff;border:0;width:42px;height:42px;font-size:18px;cursor:pointer;transition:opacity .2s}
+.controls button:disabled{opacity:.25;cursor:default}
+.counter{min-width:130px;text-align:center;font:600 13px 'Barlow Condensed',sans-serif;letter-spacing:.2em}
+.tip{margin-top:12px;font-size:11px;color:var(--muted)}
+footer{padding:16px;text-align:center;font:600 11px 'Barlow Condensed',sans-serif;letter-spacing:.2em;color:var(--muted);border-top:1px solid var(--line)}
+
+@media(max-width:600px){:root{--pw:44vw}.header{padding:12px 16px}.title{padding:20px 16px 0}.face{padding:7% 8% 12%}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="index.html" class="brand"><span class="brand-mark">IM</span><span class="brand-name">INSTANT MANIA</span></a>
+  <a href="index.html" class="back">← KEMBALI</a>
+</header>
+
+<section class="title">
+  <h1>THE <span>PROJECT</span></h1>
+  <p>History family's book</p>
+</section>
+
+<section class="stage" id="stage">
+  <div class="book" id="book">
+    <div class="backcover"></div>
+  </div>
+  <div class="controls">
+    <button id="prev" aria-label="Sebelumnya">‹</button>
+    <span class="counter" id="counter">COVER</span>
+    <button id="next" aria-label="Berikutnya">›</button>
+  </div>
+  <div class="tip">Klik buku, tekan tombol, geser layar, atau gunakan tombol panah ← → di keyboard</div>
+</section>
+
+<footer>© 2026 INSTANT MANIA</footer>
+
+<script>
+/* ==========================================================
+   ISI BUKU — EDIT DI SINI
+   Setiap halaman punya:
+     title : judul halaman
+     text  : teks cerita
+     img   : lokasi file foto  → taruh file di folder assets/book/
+     full  : true = foto memenuhi satu halaman penuh (teks jadi caption)
+   Kalau file foto belum ada, otomatis tampil kotak placeholder
+   yang menunjukkan nama file yang harus kamu isi.
+========================================================== */
+const COVER = {
+  title: "History<br>Family's<br>Book",
+  sub: "INSTANT MANIA PROJECT"
+};
+
+const PAGES = [
+  { title:"Pengantar",          text:"Tulis kata pengantar buku keluarga di sini.",                 img:"assets/book/page-01.jpg" },
+  { title:"Asal Usul",          text:"Ceritakan dari mana keluarga ini bermula.",                   img:"assets/book/page-02.jpg", full:true },
+  { title:"Kakek & Nenek",      text:"Kisah generasi pertama yang kamu kenal.",                     img:"assets/book/page-03.jpg" },
+  { title:"Masa Muda",          text:"Cerita masa muda para orang tua dan kakek-nenek.",            img:"assets/book/page-04.jpg" },
+  { title:"Orang Tua",          text:"Perjalanan hidup ayah dan ibu.",                              img:"assets/book/page-05.jpg", full:true },
+  { title:"Masa Kecil",         text:"Kenangan masa kecil bersama saudara dan keluarga.",           img:"assets/book/page-06.jpg" },
+  { title:"Momen Keluarga",     text:"Lebaran, ulang tahun, pernikahan, dan hari-hari spesial.",    img:"assets/book/page-07.jpg" },
+  { title:"Tradisi",            text:"Kebiasaan dan tradisi yang diwariskan turun-temurun.",        img:"assets/book/page-08.jpg", full:true },
+  { title:"Generasi Sekarang",  text:"Kami hari ini: siapa saja dan sedang menjalani apa.",         img:"assets/book/page-09.jpg" },
+  { title:"Untuk Generasi Nanti",text:"Pesan penutup untuk anak cucu yang akan membaca buku ini.",  img:"assets/book/page-10.jpg" }
+];
+const END_TEXT = "TO BE CONTINUED";
+/* ========================================================== */
+
+const book = document.getElementById('book');
+const N = 6; // jumlah lembar (cover + 5 lembar halaman + penutup)
+let state = 0; // jumlah lembar yang sudah dibalik (0 = buku tertutup)
+const leaves = [];
+
+function pageHTML(i){
+  const d = PAGES[i-1], n = String(i).padStart(2,'0');
+  const slot = `<div class="slot" data-src="${d.img}"><b>FOTO ${n}</b><small>isi: ${d.img}</small></div>`;
+  if(d.full) return `<div class="face-inner" style="display:contents">${slot}<div class="cap"><h3>${d.title}</h3><p>${d.text}</p></div><span class="num">${n}</span></div>`;
+  return `${slot}<div class="eyebrow">HALAMAN ${n}</div><h3>${d.title}</h3><p>${d.text}</p><span class="num">${n}</span>`;
+}
+function face(cls, html, full){
+  const f = document.createElement('div');
+  f.className = 'face ' + cls + (full ? ' full' : '');
+  f.innerHTML = html;
+  return f;
+}
+function pageFace(i, side){ return face(side, pageHTML(i), PAGES[i-1].full); }
+
+// lembar 0: cover | halaman 1
+// lembar k (1..4): halaman 2k | halaman 2k+1
+// lembar 5: halaman 10 | penutup
+for(let k=0;k<N;k++){
+  const leaf = document.createElement('div');
+  leaf.className = 'leaf';
+  let fr, bk;
+  if(k===0){
+    fr = face('front cover', `<div class="mark">IM</div><h2>${COVER.title}</h2><small>${COVER.sub}</small><span class="hint">KLIK UNTUK MEMBUKA</span>`);
+    bk = pageFace(1,'back');
+  } else if(k===N-1){
+    fr = pageFace(10,'front');
+    bk = face('back end', `<div class="mark brand-mark" style="margin-bottom:14px">IM</div><h3>${END_TEXT}</h3><p>One team. Many roles.</p>`);
+  } else {
+    fr = pageFace(2*k,'front'); bk = pageFace(2*k+1,'back');
+  }
+  leaf.append(fr,bk);
+  book.appendChild(leaf);
+  leaves.push(leaf);
+}
+
+// foto: pakai gambar jika file ada, kalau tidak tetap placeholder
+document.querySelectorAll('.slot').forEach(s=>{
+  const im = new Image();
+  im.onload = ()=>{ s.classList.add('has-img'); s.innerHTML=''; s.appendChild(im); };
+  im.src = s.dataset.src;
+});
+
+function render(delay){
+  leaves.forEach((l,i)=>{
+    l.classList.toggle('flipped', i<state);
+    const z = i<state ? i : N-i;
+    if(delay) setTimeout(()=>l.style.zIndex=z, 450); else l.style.zIndex=z;
+  });
+  book.classList.toggle('s-open', state>0 && state<N);
+  book.classList.toggle('s-end', state===N);
+  document.getElementById('prev').disabled = state===0;
+  document.getElementById('next').disabled = state===N;
+  const c = document.getElementById('counter');
+  if(state===0) c.textContent='COVER';
+  else if(state===N) c.textContent='THE END';
+  else c.textContent = 'HAL. ' + (2*state-1) + ' — ' + (2*state);
+}
+function go(d){ const n=state+d; if(n<0||n>N) return; state=n; render(true); }
+render(false);
+
+document.getElementById('next').onclick = ()=>go(1);
+document.getElementById('prev').onclick = ()=>go(-1);
+leaves.forEach((l,i)=> l.addEventListener('click',()=> go(i<state ? -1 : 1)));
+document.addEventListener('keydown',e=>{ if(e.key==='ArrowRight')go(1); if(e.key==='ArrowLeft')go(-1); });
+
+// swipe
+let x0=null; const st=document.getElementById('stage');
+st.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+st.addEventListener('touchend',e=>{ if(x0===null)return; const dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40) go(dx<0?1:-1); x0=null; });
+</script>
+</body>
+</html>
