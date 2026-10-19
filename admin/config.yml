@@ -73,3 +73,91 @@ collections:
       - label: "Isi Artikel"
         name: "body"
         widget: "markdown"
+
+# =====================================================================
+# TEMPEL blok ini di admin/config.yml, di bawah `collections:`
+# (sejajar dengan koleksi "articles" yang sudah ada — jangan hapus yang lama).
+# Setiap artikel di koleksi ini otomatis menjadi halaman matchday/<slug>.html.
+# =====================================================================
+
+  - name: "matchday"
+    label: "Matchday"
+    label_singular: "Matchday"
+    folder: "content/matchday"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    identifier_field: "title"
+    slug: "{{fields.slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    media_folder: "assets/matchday"
+    public_folder: "/squad/assets/matchday"
+    fields:
+      - label: "Judul"
+        name: "title"
+        widget: "string"
+        hint: "Tanda | membuat baris baru di judul besar. Contoh: INSTANT MANIA | X TEMAN TULI"
+
+      - label: "Nama file (slug)"
+        name: "slug"
+        widget: "string"
+        pattern: ["^[a-z0-9][a-z0-9-]*$", "Hanya huruf kecil, angka, dan tanda -  (tanpa spasi)"]
+        hint: "Menjadi alamat halaman. Contoh: instant-mania-x-teman-tuli  →  matchday/instant-mania-x-teman-tuli.html"
+
+      - label: "Tanggal"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        format: "YYYY-MM-DD"
+
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: ["DONE", "ON GOING", "UPCOMING"]
+        default: "DONE"
+
+      - label: "Lokasi"
+        name: "venue"
+        widget: "string"
+        required: false
+
+      - label: "Jenis acara"
+        name: "type"
+        widget: "string"
+        required: false
+        hint: "Contoh: Collaboration, Farewell, Reunion"
+
+      - label: "Line-up"
+        name: "lineup"
+        widget: "list"
+        required: false
+        field: { label: "Nama", name: "name", widget: "string" }
+
+      - label: "Foto cover"
+        name: "cover"
+        widget: "image"
+        required: false
+
+      - label: "Kalimat singkat (tagline)"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Tampil di bawah judul dan di preview WhatsApp/Instagram."
+
+      - label: "Galeri foto"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field: { label: "Foto", name: "photo", widget: "image" }
+
+      - label: "Tampilkan di website"
+        name: "published"
+        widget: "boolean"
+        default: true
+
+      - label: "Isi artikel"
+        name: "body"
+        widget: "markdown"
+        hint: "Tanda > di awal paragraf = kutipan bergaya besar."
