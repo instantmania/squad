@@ -10,7 +10,18 @@
   --bk-paper:#f7f7f5;
   --bk-pw:min(42vw,380px);            /* lebar 1 halaman */
   --bk-ph:calc(var(--bk-pw)*1.4189);  /* rasio A5 (14,8 x 21 cm) */
+  padding-top:72px;                   /* ruang untuk header (sama dengan .potm-page) */
 }
+
+/* judul halaman: sama persis dengan potm.css */
+.book-page .section-heading h1{
+  font-family:var(--heading);
+  font-size:clamp(55px,8vw,120px);
+  line-height:.8;
+  font-weight:900;
+  letter-spacing:-.03em;
+}
+.book-page .section-heading + .bk-stage{padding-top:60px}
 
 .bk-sub{margin-top:10px;color:var(--bk-muted,#6b6b68);font-size:14px}
 
@@ -72,6 +83,9 @@
 .bk-counter{min-width:130px;text-align:center;font:600 13px 'Barlow Condensed',sans-serif;letter-spacing:.2em}
 .bk-tip{margin-top:12px;font-size:11px;color:var(--bk-muted);text-align:center}
 
+@media(max-width:900px){
+  .book-page{padding-top:60px}
+}
 @media(max-width:600px){
   .book-page{--bk-pw:44vw}
   .bk-face{padding:7% 8% 12%}
