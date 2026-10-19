@@ -21,16 +21,16 @@ const BOOK_COVER = {
 };
 
 const BOOK_PAGES = [
-  { title:"Pengantar",            text:"Tulis kata pengantar buku keluarga di sini.",                 img:"assets/book/page-01.jpg" },
-  { title:"Asal Usul",            text:"Ceritakan dari mana keluarga ini bermula.",                   img:"assets/book/page-02.jpg", full:true },
-  { title:"Kakek & Nenek",        text:"Kisah generasi pertama yang kamu kenal.",                     img:"assets/book/page-03.jpg" },
-  { title:"Masa Muda",            text:"Cerita masa muda para orang tua dan kakek-nenek.",            img:"assets/book/page-04.jpg" },
-  { title:"Orang Tua",            text:"Perjalanan hidup ayah dan ibu.",                              img:"assets/book/page-05.jpg", full:true },
-  { title:"Masa Kecil",           text:"Kenangan masa kecil bersama saudara dan keluarga.",           img:"assets/book/page-06.jpg" },
-  { title:"Momen Keluarga",       text:"Lebaran, ulang tahun, pernikahan, dan hari-hari spesial.",    img:"assets/book/page-07.jpg" },
-  { title:"Tradisi",              text:"Kebiasaan dan tradisi yang diwariskan turun-temurun.",        img:"assets/book/page-08.jpg", full:true },
-  { title:"Generasi Sekarang",    text:"Kami hari ini: siapa saja dan sedang menjalani apa.",         img:"assets/book/page-09.jpg" },
-  { title:"Untuk Generasi Nanti", text:"Pesan penutup untuk anak cucu yang akan membaca buku ini.",   img:"assets/book/page-10.jpg" }
+  { title:"Pengantar",            text:"Tulis kata pengantar buku keluarga di sini.",                 img:"../assets/book/page-01.jpg" },
+  { title:"Asal Usul",            text:"Ceritakan dari mana keluarga ini bermula.",                   img:"../assets/book/page-02.jpg", full:true },
+  { title:"Kakek & Nenek",        text:"Kisah generasi pertama yang kamu kenal.",                     img:"../assets/book/page-03.jpg" },
+  { title:"Masa Muda",            text:"Cerita masa muda para orang tua dan kakek-nenek.",            img:"../assets/ook/page-04.jpg" },
+  { title:"Orang Tua",            text:"Perjalanan hidup ayah dan ibu.",                              img:"../assets/book/page-05.jpg", full:true },
+  { title:"Masa Kecil",           text:"Kenangan masa kecil bersama saudara dan keluarga.",           img:"../assets/book/page-06.jpg" },
+  { title:"Momen Keluarga",       text:"Lebaran, ulang tahun, pernikahan, dan hari-hari spesial.",    img:"../assets/book/page-07.jpg" },
+  { title:"Tradisi",              text:"Kebiasaan dan tradisi yang diwariskan turun-temurun.",        img:"../assets/book/page-08.jpg", full:true },
+  { title:"Generasi Sekarang",    text:"Kami hari ini: siapa saja dan sedang menjalani apa.",         img:"../assets/book/page-09.jpg" },
+  { title:"Untuk Generasi Nanti", text:"Pesan penutup untuk anak cucu yang akan membaca buku ini.",   img:"../assets/book/page-10.jpg" }
 ];
 
 const BOOK_END_TEXT = "TO BE CONTINUED";
