@@ -7,7 +7,7 @@
 .book-page{
   --bk-ink:#111;
   --bk-muted:#6b6b68;
-  --bk-paper:#cec9bc;
+  --bk-paper:#e8e4da;
   --bk-pw:min(42vw,380px);            /* lebar 1 halaman */
   --bk-ph:calc(var(--bk-pw)*1.4189);  /* rasio A5 (14,8 x 21 cm) */
   padding-top:72px;                   /* ruang untuk header (sama dengan .potm-page) */
