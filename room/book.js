@@ -51,7 +51,7 @@ const BOOK_END_TEXT = "TEMPAT CINTA TUMBUH, BAHAGIA MENETAP SELAMANYA";
     if(d.full){
       return `${slot}<div class="bk-cap"><h3>${d.title}</h3><p>${d.text}</p></div><span class="bk-num">${n}</span>`;
     }
-    return `${slot}<div class="bk-eyebrow">HALAMAN ${n}</div><h3>${d.title}</h3><p>${d.text}</p><span class="bk-num">${n}</span>`;
+    return `${slot}<div class="bk-eyebrow">" "${n}</div><h3>${d.title}</h3><p>${d.text}</p><span class="bk-num">${n}</span>`;
   }
 
   function face(cls, html){
