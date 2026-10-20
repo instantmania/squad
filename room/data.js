@@ -318,7 +318,74 @@ const legends = {
         image: "assets/legends/tyas.jpg"
 
     },
+   
+     ikbal: {
 
+        number: "20",
+
+        name: "IKBAL",
+
+        role: "ENTREPRENEUR",
+
+        position: "Creator",
+
+        speciality: "creates / launches /  manages ",
+
+        joined: "LOAN",
+
+        left: "2023",
+
+        retired: false,
+
+        image: "assets/legends/ikbal.jpg"
+
+    },
+   
+   
+     tyara: {
+
+        number: "04",
+
+        name: "TYARA",
+
+        role: "PHOTOGRAPHER",
+
+        position: "Creator",
+
+        speciality: "take a moment ",
+
+        joined: "2023",
+
+        left: "2024",
+
+        retired: false,
+
+        image: "assets/legends/tyara.jpg"
+
+    },
+   
+   
+     miptach: {
+
+        number: "27",
+
+        name: "MIPTACH",
+
+        role: "PHOTOGRAPHER",
+
+        position: "Back Office",
+
+        speciality: "Drawing",
+
+        joined: "LOAN",
+
+        left: "2024",
+
+        retired: false,
+
+        image: "assets/legends/tyara.jpg"
+
+     },
 
     salsa: {
 
