@@ -25,7 +25,7 @@ const BOOK_PAGES = [
   { title:"Teman Hidup",            text:"Rumah bukan sekadar tempat tinggal, melainkan tempat hati selalu ingin pulang.",                                  img:"../assets/project/book/page-02.jpg", full:true },
   { title:"Tumbuh Bersama",        text:"Kami tumbuh dengan cara berbeda, tetapi tetap berakar pada cinta yang sama.",                                    img:"../assets/project/book/page-03.jpg" },
   { title:"Ujian dan Kekuatan",            text:"Tidak semua hari mudah, tetapi kami belajar bahwa beban terasa ringan saat dipikul bersama.",            img:"../assets/project/book/page-04.jpg" },
-  { title:"Syukur — Yang Kami Milik",            text:"Kami mungkin belum memiliki segalanya, tetapi kami memiliki alasan untuk terus bersyukur.",                              img:"../assets/project/book/page-05.jpg", full:true },
+  { title:"Syukur — Yang Kami Miliki",            text:"Kami mungkin belum memiliki segalanya, tetapi kami memiliki alasan untuk terus bersyukur.",                              img:"../assets/project/book/page-05.jpg", full:true },
   { title:"Mimpi — Masa Depan Kami",           text:"Kami menyimpan mimpi yang lebih besar daripada hari ini, dan keberanian untuk mewujudkannya.",           img:"../assets/project/book/page-06.jpg" },
   { title:"Kenangan Kecil",       text:"Hal-hal sederhana yang dahulu biasa, kini menjadi kenangan paling berharga.",                                        img:"../assets/project/book/page-07.jpg" },
   { title:"Keberanian untuk tetap melangkah",              text:"Dunia mengenalnya lewat senyuman, sementara dirinya perlahan belajar bahwa tumbuh dewasa juga berarti berani tersesat sebelum menemukan arah.",        img:"../assets/project/book/page-08.jpg", full:true },
