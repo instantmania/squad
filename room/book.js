@@ -78,7 +78,7 @@ const BOOK_END_TEXT = "TEMPAT CINTA TUMBUH, BAHAGIA MENETAP SELAMANYA";
       bk = pageFace(1,'back');
     } else if(k===N-1){
       fr = pageFace(10,'front');
-      bk = face('bk-back bk-end', `<div class="bk-mark">IM</div><h3>${BOOK_END_TEXT}</h3><p>One team. Many roles.</p>`);
+      bk = face('bk-back bk-end', `<div class="bk-mark">IM</div><h3>${BOOK_END_TEXT}</h3><p>Rumah Kita</p>`);
     } else {
       fr = pageFace(2*k,'front');
       bk = pageFace(2*k+1,'back');
