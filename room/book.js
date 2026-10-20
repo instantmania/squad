@@ -21,19 +21,19 @@ const BOOK_COVER = {
 };
 
 const BOOK_PAGES = [
-  { title:"Prolog",               text:"Setiap keluarga memiliki cerita, dan inilah kisah yang kami sebut rumah.",                 img:"../assets/project/book/page-01.jpg" },
-  { title:"Teman Hidup",            text:"Rumah bukan sekadar tempat tinggal, melainkan tempat hati selalu ingin pulang.",                   img:"../assets/project/book/page-02.jpg", full:true },
-  { title:"Kakek & Nenek",        text:"Kisah generasi pertama yang kamu kenal.",                     img:"../assets/project/book/page-03.jpg" },
-  { title:"Masa Muda",            text:"Cerita masa muda para orang tua dan kakek-nenek.",            img:"../assets/project/book/page-04.jpg" },
-  { title:"Orang Tua",            text:"Perjalanan hidup ayah dan ibu.",                              img:"../assets/project/book/page-05.jpg", full:true },
-  { title:"Masa Kecil",           text:"Kenangan masa kecil bersama saudara dan keluarga.",           img:"../assets/project/book/page-06.jpg" },
-  { title:"Momen Keluarga",       text:"Lebaran, ulang tahun, pernikahan, dan hari-hari spesial.",    img:"../assets/project/book/page-07.jpg" },
-  { title:"Tradisi",              text:"Kebiasaan dan tradisi yang diwariskan turun-temurun.",        img:"../assets/project/book/page-08.jpg", full:true },
-  { title:"Generasi Sekarang",    text:"Kami hari ini: siapa saja dan sedang menjalani apa.",         img:"../assets/project/book/page-09.jpg" },
-  { title:"Untuk Generasi Nanti", text:"Pesan penutup untuk anak cucu yang akan membaca buku ini.",   img:"../assets/project/book/page-10.jpg" }
+  { title:"Prolog",               text:"Setiap keluarga memiliki cerita, dan inilah kisah yang kami sebut rumah.",                                         img:"../assets/project/book/page-01.jpg" },
+  { title:"Teman Hidup",            text:"Rumah bukan sekadar tempat tinggal, melainkan tempat hati selalu ingin pulang.",                                  img:"../assets/project/book/page-02.jpg", full:true },
+  { title:"Tumbuh Bersama",        text:"Kami tumbuh dengan cara berbeda, tetapi tetap berakar pada cinta yang sama.",                                    img:"../assets/project/book/page-03.jpg" },
+  { title:"Ujian dan Kekuatan",            text:"Tidak semua hari mudah, tetapi kami belajar bahwa beban terasa ringan saat dipikul bersama.",            img:"../assets/project/book/page-04.jpg" },
+  { title:"Syukur — Yang Kami Milik",            text:"Kami mungkin belum memiliki segalanya, tetapi kami memiliki alasan untuk terus bersyukur.",                              img:"../assets/project/book/page-05.jpg", full:true },
+  { title:"Mimpi — Masa Depan Kami",           text:"Kami menyimpan mimpi yang lebih besar daripada hari ini, dan keberanian untuk mewujudkannya.",           img:"../assets/project/book/page-06.jpg" },
+  { title:"Kenangan Kecil",       text:"Hal-hal sederhana yang dahulu biasa, kini menjadi kenangan paling berharga.",                                        img:"../assets/project/book/page-07.jpg" },
+  { title:"Keberanian untuk tetap melangkah",              text:"Dunia mengenalnya lewat senyuman, sementara dirinya perlahan belajar bahwa tumbuh dewasa juga berarti berani tersesat sebelum menemukan arah.",        img:"../assets/project/book/page-08.jpg", full:true },
+  { title:"Si Sulung",    text:"keteguhan, tanggung jawab, dan kasih sayang yang tak selalu diucapkan.",                                                      img:"../assets/project/book/page-09.jpg" },
+  { title:"Rumah Terindah", text:"Tertawa bersama, mencintai tanpa batas waktu.",                                                                           img:"../assets/project/book/page-10.jpg" }
 ];
 
-const BOOK_END_TEXT = "TO BE CONTINUED";
+const BOOK_END_TEXT = "TEMPAT CINTA TUMBUH, bBAHAGIA MENETAP SELAMANYA;
 /* ========================================================== */
 
 (function(){
