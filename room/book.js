@@ -33,7 +33,7 @@ const BOOK_PAGES = [
   { title:"Rumah Terindah", text:"Tertawa bersama, mencintai tanpa batas waktu.",                                                                           img:"../assets/project/book/page-10.jpg" }
 ];
 
-const BOOK_END_TEXT = "TEMPAT CINTA TUMBUH, bBAHAGIA MENETAP SELAMANYA;
+const BOOK_END_TEXT = "TEMPAT CINTA TUMBUH, BAHAGIA MENETAP SELAMANYA";
 /* ========================================================== */
 
 (function(){
