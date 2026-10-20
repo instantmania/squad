@@ -383,7 +383,7 @@ const legends = {
 
         retired: false,
 
-        image: "assets/legends/tyara.jpg"
+        image: "assets/legends/miptach.jpg"
 
      },
 
