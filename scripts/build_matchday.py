@@ -8,6 +8,9 @@ Membuat halaman HTML Matchday dari artikel yang ditulis di panel admin (Decap CM
 Dijalankan oleh GitHub Actions saat deploy; bisa juga dijalankan lokal:
   python scripts/build_matchday.py --content content/matchday --site _site
 
+Foto: yang tampil adalah isian "Foto cover" dan "Galeri foto" di panel. Kalau kosong, foto dibaca dari
+folder assets/matchday/<photos_folder atau slug>/ (cover*.jpg = cover, sisanya galeri, urut alami).
+
 Aturan keamanan:
 - Halaman buatan tangan (tanpa tanda "generated-by") TIDAK pernah ditimpa.
 - Entri yang rusak dilewati dengan peringatan; deploy tidak ikut gagal.
@@ -20,7 +23,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse
 
 import markdown
 import yaml
@@ -105,6 +108,43 @@ def as_list(value):
     return [str(value).strip()]
 
 
+# ---------------------------------------------------------------- foto dari folder
+
+IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif"}
+FOLDER_RE = re.compile(r"^[A-Za-z0-9._-]+$")
+
+
+def natural_key(name):
+    """Urutan alami: 2.jpg sebelum 10.jpg."""
+    return [int(t) if t.isdigit() else t for t in re.split(r"(\d+)", name.lower())]
+
+
+def discover_photos(site, folder):
+    """
+    Cari foto di <site>/assets/matchday/<folder>/ (kebiasaan lama: 01.jpg, 02.jpg, ...).
+    File yang namanya diawali "cover" dijadikan foto cover; sisanya galeri (urutan alami).
+    Nama file dibaca langsung dari folder, jadi huruf besar/kecil selalu cocok.
+    """
+    if not folder or not FOLDER_RE.match(folder) or folder in (".", ".."):
+        if folder:
+            warn(f"photos_folder '{folder}' tidak valid (hanya huruf, angka, titik, - dan _)")
+        return "", []
+    directory = site / "assets" / "matchday" / folder
+    if not directory.is_dir():
+        return "", []
+
+    files = sorted(
+        (f for f in directory.iterdir() if f.is_file() and f.suffix.lower() in IMAGE_EXT),
+        key=lambda f: natural_key(f.name),
+    )
+    cover = next((f for f in files if f.stem.lower().startswith("cover")), None)
+
+    def to_path(f):
+        return f"assets/matchday/{quote(folder)}/{quote(f.name)}"
+
+    return (to_path(cover) if cover else ""), [to_path(f) for f in files if f is not cover]
+
+
 # ---------------------------------------------------------------- membangun HTML
 
 def convert_body(body, rel):
@@ -126,7 +166,7 @@ def convert_body(body, rel):
     return out
 
 
-def build_page(template, entry, body, rel, absolute, site_url, slug):
+def build_page(template, entry, body, rel, absolute, site_url, slug, site):
     title = str(entry.get("title") or slug).strip()
     parts = [p.strip() for p in title.split("|") if p.strip()]
     title_plain = " ".join(parts) or slug
@@ -144,7 +184,11 @@ def build_page(template, entry, body, rel, absolute, site_url, slug):
 
     tagline = f'<p class="article-tagline">\n{esc(description)}\n</p>' if description else ""
 
-    cover = str(entry.get("cover") or "").strip()
+    # foto: isian panel lebih diutamakan; kalau kosong, pakai foto dari folder assets/matchday/<folder>/
+    folder = str(entry.get("photos_folder") or slug).strip()
+    folder_cover, folder_gallery = discover_photos(site, folder)
+
+    cover = str(entry.get("cover") or "").strip() or folder_cover
     cover_block = ""
     if cover:
         cover_block = (
@@ -164,7 +208,7 @@ def build_page(template, entry, body, rel, absolute, site_url, slug):
         facts.append(("LINE-UP", " / ".join(lineup)))
     facts_html = "\n".join(f"<div>\n<dt>{esc(k)}</dt>\n<dd>{esc(v)}</dd>\n</div>\n" for k, v in facts)
 
-    photos = as_list(entry.get("gallery"))
+    photos = as_list(entry.get("gallery")) or folder_gallery
     gallery_block = ""
     if photos:
         figures = []
@@ -264,7 +308,7 @@ def main():
                 skipped.append((path.name, "bentrok dengan halaman manual"))
                 continue
 
-            page, summary = build_page(template, entry, body, rel, absolute, args.site_url, slug)
+            page, summary = build_page(template, entry, body, rel, absolute, args.site_url, slug, site)
             target.write_text(page, encoding="utf-8")
             seen[slug] = path.name
             summaries.append(summary)
