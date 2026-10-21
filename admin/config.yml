@@ -91,8 +91,8 @@ collections:
     slug: "{{fields.slug}}"
     summary: "{{title}} — {{date}}"
     sortable_fields: ["date", "title"]
-    media_folder: "assets/matchday"
-    public_folder: "/squad/assets/matchday"
+    media_folder: "assets/matchday/{{slug}}"
+    public_folder: "/squad/assets/matchday/{{slug}}"
     fields:
       - label: "Judul"
         name: "title"
