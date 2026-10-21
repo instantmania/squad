@@ -129,7 +129,7 @@ def discover_photos(site, folder):
         if folder:
             warn(f"photos_folder '{folder}' tidak valid (hanya huruf, angka, titik, - dan _)")
         return "", []
-    directory = site / "assets" / "matchday" / folder
+    directory = site / "content" / "matchday" / "assets" / "matchday" / folder
     if not directory.is_dir():
         return "", []
 
