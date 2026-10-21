@@ -40,13 +40,29 @@ jobs:
       - name: Pasang pustaka
         run: pip install pyyaml markdown
 
+      
       - name: Salin situs ke folder _site (tanpa file internal)
         run: |
           mkdir _site
           rsync -a \
-            --exclude '.git' --exclude '.github' --exclude '_site' \
-            --exclude 'scripts' --exclude 'content' --exclude 'node_modules' \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='_site' \
+            --exclude='scripts' \
+            --exclude='content' \
+            --exclude='node_modules' \
             ./ _site/
+
+      - name: Salin aset foto Matchday
+        run: |
+          if [ -d content/matchday/assets/matchday ]; then
+            mkdir -p _site/assets/matchday
+            rsync -a \
+              content/matchday/assets/matchday/ \
+              _site/assets/matchday/
+          else
+            echo "Folder aset Matchday belum tersedia."
+          fi
 
       - name: Buat halaman Matchday dari artikel panel admin
         run: |
@@ -54,6 +70,7 @@ jobs:
             --content content/matchday \
             --site _site \
             --site-url https://instantmania.github.io/squad
+
 
       - name: Siapkan Pages
         uses: actions/configure-pages@v5
