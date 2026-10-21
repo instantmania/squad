@@ -135,6 +135,12 @@ collections:
         required: false
         field: { label: "Nama", name: "name", widget: "string" }
 
+      - label: "Folder foto (opsional)"
+        name: "photos_folder"
+        widget: "string"
+        required: false
+        hint: "Isi HANYA jika foto disimpan manual di assets/matchday/NAMA-FOLDER/ (cover*.jpg = cover, sisanya galeri). Kosong = dianggap sama dengan slug."
+
       - label: "Foto cover"
         name: "cover"
         widget: "image"
