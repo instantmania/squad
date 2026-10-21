@@ -9,8 +9,8 @@ locale: id
 site_url: https://instantmania.github.io/squad
 display_url: https://instantmania.github.io/squad
 
-media_folder: "assets/uploads"
-public_folder: "/squad/assets/uploads"
+media_folder: "content/matchday/assets/matchday"
+public_folder: "/squad/content/matchday/assets/matchday"
 
 publish_mode: simple
 
