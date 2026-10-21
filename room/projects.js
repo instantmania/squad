@@ -24,7 +24,7 @@ const projects = [
         title: "History Family's Book",
         sub:   "FAMILY ARCHIVE · 2026",
         page:  "project/history-book.html",
-        cover: "assets/project/book/page-01.jpg"
+        cover: "assets/project/book/cover.jpg"
     }
 
     /* contoh project berikutnya (hapus tanda komentar & koma di atas):
