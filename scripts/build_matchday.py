@@ -121,28 +121,47 @@ def natural_key(name):
 
 def discover_photos(site, folder):
     """
-    Cari foto di <site>/assets/matchday/<folder>/ (kebiasaan lama: 01.jpg, 02.jpg, ...).
-    File yang namanya diawali "cover" dijadikan foto cover; sisanya galeri (urutan alami).
-    Nama file dibaca langsung dari folder, jadi huruf besar/kecil selalu cocok.
+    Cari foto sumber di:
+    content/matchday/assets/matchday/<folder>/
+
+    Foto cover*.jpg menjadi cover, sisanya galeri.
     """
     if not folder or not FOLDER_RE.match(folder) or folder in (".", ".."):
         if folder:
-            warn(f"photos_folder '{folder}' tidak valid (hanya huruf, angka, titik, - dan _)")
+            warn(f"photos_folder '{folder}' tidak valid")
         return "", []
-    directory = site / "content" / "matchday" / "assets" / "matchday" / folder
+
+    directory = (
+        Path("content")
+        / "matchday"
+        / "assets"
+        / "matchday"
+        / folder
+    )
+
     if not directory.is_dir():
         return "", []
 
     files = sorted(
-        (f for f in directory.iterdir() if f.is_file() and f.suffix.lower() in IMAGE_EXT),
+        (
+            f for f in directory.iterdir()
+            if f.is_file() and f.suffix.lower() in IMAGE_EXT
+        ),
         key=lambda f: natural_key(f.name),
     )
-    cover = next((f for f in files if f.stem.lower().startswith("cover")), None)
+
+    cover = next(
+        (f for f in files if f.stem.lower().startswith("cover")),
+        None,
+    )
 
     def to_path(f):
         return f"assets/matchday/{quote(folder)}/{quote(f.name)}"
 
-    return (to_path(cover) if cover else ""), [to_path(f) for f in files if f is not cover]
+    return (
+        to_path(cover) if cover else "",
+        [to_path(f) for f in files if f is not cover],
+    )
 
 
 # ---------------------------------------------------------------- membangun HTML
