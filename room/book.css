@@ -13,6 +13,47 @@
   padding-top:72px;                   /* ruang untuk header (sama dengan .potm-page) */
 }
 
+.bk-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 14px;
+  margin: 20px 0 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  max-width: 52ch;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.bk-meta-type   { color: #141210; font-weight: 700; }
+.bk-meta-client { color: #8a8780; font-weight: 500; }
+.bk-meta-client::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  vertical-align: middle;
+  margin-right: 14px;
+}
+
+.bk-desc {
+  max-width: 52ch;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #77746d;
+}
+.bk-desc p { margin: 0 0 14px; }
+.bk-desc p:last-child { margin-bottom: 0; }
+
+.bk-desc .bk-hook {
+  color: #141210;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
 /* judul halaman: sama persis dengan potm.css */
 .book-page .section-heading h1{
   font-family:var(--heading);
